@@ -869,49 +869,90 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   radial-gradient(circle at 50% -10%,rgba(235,28,36,.36),transparent 38%),
   radial-gradient(circle at 50% 110%,rgba(255,144,72,.28),transparent 40%),
   linear-gradient(180deg,#0d0d11,#06060a);}
-.s7 .body{position:absolute;inset:120px 96px 100px 96px;display:flex;flex-direction:column;gap:28px;}
+.s7 .body{position:absolute;inset:96px 96px 72px 96px;display:flex;flex-direction:column;gap:18px;}
 .s7 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;}
 .s7 h2{
-  font-family:"Unbounded",sans-serif;font-weight:900;font-size:120px;line-height:.86;
-  letter-spacing:-.075em;text-transform:uppercase;color:#fff;
-  text-shadow:2px 2px 0 var(--signal),4px 4px 0 rgba(0,0,0,.5),0 32px 70px rgba(235,28,36,.32);
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:84px;line-height:.86;
+  letter-spacing:-.07em;text-transform:uppercase;color:#fff;
+  text-shadow:2px 2px 0 var(--signal),4px 4px 0 rgba(0,0,0,.5),0 28px 60px rgba(235,28,36,.32);
 }
 .s7 h2 em{font-style:normal;color:var(--signal);}
-.s7 .lead{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:right;max-width:480px;line-height:1.7;font-weight:500;}
-.s7 .lineup{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:1;}
+.s7 .lead{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:right;max-width:440px;line-height:1.65;font-weight:500;}
+.s7 .lineup{display:flex;flex-direction:column;gap:14px;flex:1;min-height:0;}
+.s7 .lineup-section{display:flex;flex-direction:column;gap:8px;min-height:0;}
+.s7 .lineup-section.head-block{flex:1.45;}
+.s7 .lineup-section.artists-block{flex:2.0;}
+.s7 .lineup-section.djs-block{flex:1.0;}
+.s7 .section-label{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;
+}
+.s7 .section-label::before{
+  content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent);
+}
+.s7 .section-label .lab{color:#fff;letter-spacing:.32em;}
+.s7 .section-label .num{color:var(--signal);font-weight:700;}
+.s7 .grid-head{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:10px;flex:1;min-height:0;}
+.s7 .grid-artists{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);gap:6px;flex:1;min-height:0;}
+.s7 .grid-djs{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr);gap:6px;flex:1;min-height:0;}
 .s7 .artist{
   position:relative;border:1px solid rgba(255,255,255,.16);
   background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
-  padding:22px;display:flex;flex-direction:column;justify-content:space-between;
-  overflow:hidden;
-  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);
+  padding:10px 12px;display:flex;flex-direction:column;gap:4px;justify-content:flex-end;
+  overflow:hidden;min-height:0;
+  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);
   box-shadow:
     0 1px 0 rgba(255,255,255,.1) inset,
     0 -1px 0 rgba(0,0,0,.4) inset,
-    0 22px 40px -22px rgba(0,0,0,.55),
-    0 50px 90px -42px rgba(235,28,36,.16);
-  -webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);
+    0 18px 36px -22px rgba(0,0,0,.55);
 }
 .s7 .artist::after{
-  content:"";position:absolute;left:0;top:0;right:18px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);
+  content:"";position:absolute;left:0;top:0;right:12px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
 }
-.s7 .artist .role{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.3em;color:rgba(255,255,255,.55);text-transform:uppercase;font-weight:600;}
-.s7 .artist .name{font-family:"Unbounded",sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:#fff;text-transform:uppercase;line-height:.96;margin-top:6px;
-  text-shadow:0 16px 32px rgba(0,0,0,.5);}
-.s7 .artist .num{position:absolute;right:18px;bottom:14px;font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.28em;color:rgba(255,255,255,.4);font-weight:600;}
-.s7 .artist.head{
-  background:linear-gradient(160deg,rgba(235,28,36,.96),rgba(255,144,72,.82));
+.s7 .artist .role{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600;}
+.s7 .artist .name{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.035em;color:#fff;text-transform:uppercase;line-height:.96;
+  text-shadow:0 12px 24px rgba(0,0,0,.5);}
+.s7 .artist .num{position:absolute;right:12px;top:10px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.26em;color:rgba(255,255,255,.4);font-weight:600;}
+
+.s7 .grid-head .artist{padding:10px 16px 12px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);}
+.s7 .grid-head .artist .role{font-size:9px;}
+.s7 .grid-head .artist .name{font-size:18px;line-height:.94;}
+.s7 .grid-head .artist .num{font-size:9.5px;right:12px;top:9px;}
+.s7 .grid-head .artist.head{
+  background:linear-gradient(160deg,rgba(235,28,36,.95),rgba(255,144,72,.82));
   border-color:rgba(255,255,255,.22);
-  box-shadow:0 28px 60px -18px rgba(235,28,36,.55);
+  box-shadow:0 24px 50px -18px rgba(235,28,36,.5);
 }
-.s7 .artist.head .role{color:rgba(255,255,255,.88);}
-.s7 .artist.head .name{color:#fff;font-size:34px;}
-.s7 .artist.head .num{color:rgba(255,255,255,.78);}
+.s7 .grid-head .artist.head .role{color:rgba(255,255,255,.88);}
+.s7 .grid-head .artist.head .name{color:#fff;}
+.s7 .grid-head .artist.head .num{color:rgba(255,255,255,.78);}
+
+.s7 .grid-artists .artist{padding:8px 10px 9px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);}
+.s7 .grid-artists .artist .name{font-size:13px;letter-spacing:-.03em;line-height:.98;}
+.s7 .grid-artists .artist .num{font-size:8px;right:8px;top:6px;letter-spacing:.22em;}
+.s7 .grid-artists .artist.long .name{font-size:11px;}
+.s7 .grid-artists .artist.xlong .name{font-size:9.5px;letter-spacing:-.02em;}
+
+.s7 .grid-djs{}
+.s7 .grid-djs .artist{
+  padding:8px 10px 9px;
+  background:linear-gradient(160deg,rgba(120,160,255,.12),rgba(80,90,150,.04));
+  border-color:rgba(170,200,255,.18);
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
+}
+.s7 .grid-djs .artist::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,rgba(170,200,255,.7),transparent);
+}
+.s7 .grid-djs .artist .name{font-size:12px;letter-spacing:-.025em;line-height:.98;color:rgba(255,255,255,.95);}
+.s7 .grid-djs .artist .num{font-size:8px;right:8px;top:6px;letter-spacing:.22em;color:rgba(170,200,255,.55);}
+.s7 .grid-djs .artist.long .name{font-size:10px;}
+
 .s7 .footnote{
   display:flex;align-items:center;justify-content:space-between;gap:20px;
-  border-top:1px solid rgba(255,255,255,.14);padding-top:18px;
-  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;font-weight:500;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:14px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.26em;color:rgba(255,255,255,.55);text-transform:uppercase;font-weight:500;
 }
 .s7 .footnote em{font-style:normal;color:var(--signal);font-weight:700;}
 
@@ -1290,7 +1331,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
       <div class="stats">
         <div class="cell"><div class="v">2<em>000</em>+</div><div class="l">гостей</div></div>
         <div class="cell"><div class="v">16+</div><div class="l">активных зон</div></div>
-        <div class="cell"><div class="v">15+</div><div class="l">артистов · dj</div></div>
+        <div class="cell"><div class="v">44</div><div class="l">артистов · dj</div></div>
         <div class="cell"><div class="v">∞</div><div class="l">программа · live</div></div>
       </div>
     </div>
@@ -1393,7 +1434,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
           <ul><li>moto-show</li><li>tattoo</li><li>installations</li></ul>
         </div>
         <div class="card-photo">
-          <img src="images/2026-04-28 22.05.19.jpg" alt="show"/>
+          <img src="images/4.jpg" alt="show"/>
           <span class="corner-mark">show</span>
           <span class="stamp">live · perform</span>
         </div>
@@ -1528,7 +1569,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
       <div class="photo">
         <span class="stamp">portrait · core</span>
         <span class="frame"></span>
-        <img src="images/2026-04-28 22.05.12.jpg" alt="guest portrait"/>
+        <img src="images/8.jpg" alt="guest portrait"/>
         <div class="cap">Они уже здесь —<br>осталось <em>встретиться.</em></div>
       </div>
       <div class="stat-row">
@@ -1671,7 +1712,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa</span></div>
     <span>07 / 11 · line-up</span>
-    <span>electronica → hip-hop</span>
+    <span>electronica → hip-hop · 44 acts</span>
   </div>
 
   <div class="body">
@@ -1681,79 +1722,78 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
     </div>
 
     <div class="lineup">
-      <div class="artist head">
-        <span class="role">headliner · hip-hop</span>
-        <span class="name">Томас<br>Мраз</span>
-        <span class="num">01</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · hip-hop</span>
-        <span class="name">Слава<br>Мэрлоу</span>
-        <span class="num">02</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · rap</span>
-        <span class="name">Антоха МС</span>
-        <span class="num">03</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · cloud</span>
-        <span class="name">Лауд</span>
-        <span class="num">04</span>
+      <div class="lineup-section head-block">
+        <div class="section-label"><span class="lab">// headliners</span><span class="num">08 / 44</span></div>
+        <div class="grid-head">
+          <div class="artist head"><span class="role">headliner · live</span><span class="name">Жак<br>Энтони</span><span class="num">01</span></div>
+          <div class="artist head"><span class="role">headliner · live</span><span class="name">Благо<br>Вайт</span><span class="num">02</span></div>
+          <div class="artist head"><span class="role">headliner · r&amp;b</span><span class="name">Кристина<br>Си</span><span class="num">03</span></div>
+          <div class="artist head"><span class="role">headliner · hip-hop</span><span class="name">Гафур</span><span class="num">04</span></div>
+          <div class="artist head"><span class="role">headliner · pop</span><span class="name">ANDRO</span><span class="num">05</span></div>
+          <div class="artist head"><span class="role">headliner · pop</span><span class="name">Адель</span><span class="num">06</span></div>
+          <div class="artist head"><span class="role">headliner · alt</span><span class="name">Биовульф</span><span class="num">07</span></div>
+          <div class="artist head"><span class="role">headliner · hip-hop</span><span class="name">DONI</span><span class="num">08</span></div>
+        </div>
       </div>
 
-      <div class="artist">
-        <span class="role">dj · electronica</span>
-        <span class="name">DJ<br>Подлеснов</span>
-        <span class="num">05</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · trap</span>
-        <span class="name">Долбит<br>нормально</span>
-        <span class="num">06</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · alt</span>
-        <span class="name">Рептилойд</span>
-        <span class="num">07</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · pop-rap</span>
-        <span class="name">Саша<br>Спилберг</span>
-        <span class="num">08</span>
+      <div class="lineup-section artists-block">
+        <div class="section-label"><span class="lab">// artists</span><span class="num">24 / 44</span></div>
+        <div class="grid-artists">
+          <div class="artist"><span class="name">ARSUL</span><span class="num">09</span></div>
+          <div class="artist long"><span class="name">Грустная<br>Тусовщица</span><span class="num">10</span></div>
+          <div class="artist"><span class="name">KEYNASTY</span><span class="num">11</span></div>
+          <div class="artist"><span class="name">Eroiera</span><span class="num">12</span></div>
+          <div class="artist"><span class="name">Metox</span><span class="num">13</span></div>
+          <div class="artist"><span class="name">ASHY 43</span><span class="num">14</span></div>
+          <div class="artist"><span class="name">G4OUR</span><span class="num">15</span></div>
+          <div class="artist"><span class="name">RVMZES</span><span class="num">16</span></div>
+          <div class="artist"><span class="name">ARITA</span><span class="num">17</span></div>
+          <div class="artist long"><span class="name">DIMA<br>URIH</span><span class="num">18</span></div>
+          <div class="artist"><span class="name">ROXXI</span><span class="num">19</span></div>
+          <div class="artist xlong"><span class="name">ZAUR&amp;<br>MEIRINKITO</span><span class="num">20</span></div>
+          <div class="artist"><span class="name">ARINTU</span><span class="num">21</span></div>
+          <div class="artist long"><span class="name">CHERNO-<br>SHEY</span><span class="num">22</span></div>
+          <div class="artist long"><span class="name">Игнатий<br>Винтуров</span><span class="num">23</span></div>
+          <div class="artist"><span class="name">FLOCKAA</span><span class="num">24</span></div>
+          <div class="artist long"><span class="name">LUVDA-<br>KASH</span><span class="num">25</span></div>
+          <div class="artist"><span class="name">SUDEAL</span><span class="num">26</span></div>
+          <div class="artist xlong"><span class="name">КИСЛО-<br>СЛАДКИЙ<br>с&nbsp;БОНА</span><span class="num">27</span></div>
+          <div class="artist"><span class="name">EKHO017</span><span class="num">28</span></div>
+          <div class="artist"><span class="name">LYAPO</span><span class="num">29</span></div>
+          <div class="artist"><span class="name">APRIEL</span><span class="num">30</span></div>
+          <div class="artist"><span class="name">BLINK</span><span class="num">31</span></div>
+          <div class="artist long"><span class="name">MOLODOI<br>VLADIMIR</span><span class="num">32</span></div>
+        </div>
       </div>
 
-      <div class="artist">
-        <span class="role">live · street</span>
-        <span class="name">Расшан<br>стайл</span>
-        <span class="num">09</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · hip-hop</span>
-        <span class="name">Бикло</span>
-        <span class="num">10</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · cloud</span>
-        <span class="name">Стоник</span>
-        <span class="num">11</span>
-      </div>
-      <div class="artist">
-        <span class="role">live · alt</span>
-        <span class="name">Илья<br>Гадаев</span>
-        <span class="num">12</span>
+      <div class="lineup-section djs-block">
+        <div class="section-label"><span class="lab">// dj</span><span class="num">12 / 44</span></div>
+        <div class="grid-djs">
+          <div class="artist"><span class="name">KIIDA</span><span class="num">33</span></div>
+          <div class="artist long"><span class="name">STAS<br>SATORI</span><span class="num">34</span></div>
+          <div class="artist long"><span class="name">RUSLAN<br>FYUCHA</span><span class="num">35</span></div>
+          <div class="artist long"><span class="name">PRETTY<br>VARDI</span><span class="num">36</span></div>
+          <div class="artist long"><span class="name">SAYNO-<br>MOCUZ</span><span class="num">37</span></div>
+          <div class="artist long"><span class="name">Яна<br>Индигарка</span><span class="num">38</span></div>
+          <div class="artist long"><span class="name">ANNA<br>DARK</span><span class="num">39</span></div>
+          <div class="artist"><span class="name">PTICHKA</span><span class="num">40</span></div>
+          <div class="artist"><span class="name">SHABA</span><span class="num">41</span></div>
+          <div class="artist"><span class="name">EZZA</span><span class="num">42</span></div>
+          <div class="artist"><span class="name">HAMZEY</span><span class="num">43</span></div>
+          <div class="artist long"><span class="name">MARI<br>KRASSO</span><span class="num">44</span></div>
+        </div>
       </div>
     </div>
 
     <div class="footnote">
       <span><em>+</em> кураторские блоки · special guests · secret line</span>
-      <span>line-up subject to change · 2026.06.06</span>
+      <span>44 acts · line-up subject to change · 2026.06.06</span>
     </div>
   </div>
 
   <div class="chrome-bot">
-    <span>thomas mraz · merlow · antoha · laud · podlesnov · dolbit · reptiloid · spilberg · stoneek</span>
-    <span>music line · v1</span>
+    <span>jakentony · blago white · christina si · gafur · andro · adel · biovulf · doni · +24 artists · +12 djs</span>
+    <span>music line · v2</span>
   </div>
 </section>
 
@@ -1802,9 +1842,9 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
     <div class="live-strip">
       <div class="label"><span class="lab">live moments</span><span class="v">UGC<br>engine</span></div>
       <div class="frame"><img src="images/3.jpg" alt=""/><span class="tag">stage · 01</span></div>
-      <div class="frame"><img src="images/8.jpg" alt=""/><span class="tag">crowd · 02</span></div>
-      <div class="frame"><img src="live/2026-04-27_19_18_37.jpg" alt=""/><span class="tag">live · 03</span></div>
-      <div class="frame"><img src="images/zvuk-show-3.jpg" alt=""/><span class="tag">drip · 04</span></div>
+      <div class="frame"><img src="images/2026-04-28 22.05.22.jpg" alt=""/><span class="tag">crowd · 02</span></div>
+      <div class="frame"><img src="images/5.jpg" alt=""/><span class="tag">live · 03</span></div>
+      <div class="frame"><img src="images/10.jpg" alt=""/><span class="tag">drip · 04</span></div>
       <div class="frame"><img src="images/9.jpg" alt=""/><span class="tag">art · 05</span></div>
     </div>
 
@@ -1868,7 +1908,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
       <div class="photo-row">
         <div class="photo">
           <span class="stamp">crew · live</span>
-          <img src="live/2026-04-27_19_18_49.jpg" alt="crew"/>
+          <img src="uploads/1776698030469-e79b964b-photo-2026-04-20-18-08-02.jpg" alt="crew"/>
           <div class="ovr"></div>
         </div>
         <div class="photo">
