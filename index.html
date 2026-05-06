@@ -889,114 +889,133 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 .s7 h2 em{font-style:normal;color:var(--signal);}
 .s7 .lead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:right;max-width:380px;line-height:1.65;font-weight:500;}
 
-/* ARENA layout */
-.s7 .arena{display:grid;grid-template-columns:36% 1fr;gap:24px;flex:1;min-height:0;}
+/* ARENA layout — ring-dominant */
+.s7 .arena{display:grid;grid-template-columns:55% 1fr;gap:24px;flex:1;min-height:0;}
 
-/* ── RING zone ── */
-.s7 .ring-zone{position:relative;display:flex;flex-direction:column;gap:12px;min-height:0;}
+/* ── RING zone (left, dominant) ── */
+.s7 .ring-zone{position:relative;display:flex;flex-direction:column;gap:10px;min-height:0;}
 .s7 .ring-stage{position:relative;flex:1;min-height:0;
   border:1px solid rgba(255,255,255,.12);
-  background:radial-gradient(circle at 50% 60%,rgba(235,28,36,.18),transparent 55%),
+  background:radial-gradient(circle at 50% 56%,rgba(235,28,36,.22),transparent 55%),
              linear-gradient(180deg,rgba(20,20,26,.7),rgba(8,8,12,.95));
-  overflow:hidden;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);}
+  overflow:hidden;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);}
 .s7 .ring-stage svg{position:absolute;inset:0;width:100%;height:100%;}
-.s7 .ring-stage .ring-corner{
-  position:absolute;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.32em;font-weight:700;
-  text-transform:uppercase;color:rgba(255,255,255,.42);}
-.s7 .ring-stage .ring-corner.tl{top:14px;left:18px;}
-.s7 .ring-stage .ring-corner.tr{top:14px;right:18px;color:var(--signal);}
-.s7 .ring-stage .ring-corner.bl{bottom:14px;left:18px;}
-.s7 .ring-stage .ring-corner.br{bottom:14px;right:18px;}
-.s7 .ring-stage .center-block{
+
+/* sweep beam — animated rotating spotlight */
+.s7 .ring-stage::before{
+  content:"";position:absolute;left:50%;top:50%;width:160%;height:8%;
+  background:linear-gradient(90deg,transparent 35%,rgba(255,144,72,.22) 50%,transparent 65%);
+  transform-origin:left center;transform:translateX(0%) translateY(-50%);
+  animation:s7sweep 12s linear infinite;mix-blend-mode:screen;pointer-events:none;
+}
+@keyframes s7sweep{from{transform:translateY(-50%) rotate(0deg);}to{transform:translateY(-50%) rotate(360deg);}}
+
+/* HEADLINER labels around the octagon — 8 corners */
+.s7 .headliner-corner{
+  position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;gap:1px;text-align:center;
+  pointer-events:none;text-transform:uppercase;
+  text-shadow:0 8px 18px rgba(0,0,0,.7),0 0 14px rgba(235,28,36,.3);
+  width:160px;
+}
+.s7 .headliner-corner .role{font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.36em;font-weight:700;color:rgba(255,200,160,.62);}
+.s7 .headliner-corner .name{font-family:"Unbounded",sans-serif;font-size:18px;font-weight:800;letter-spacing:-.04em;color:#fff;line-height:.92;}
+.s7 .headliner-corner .num{font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:.34em;color:var(--signal);font-weight:700;margin-top:3px;}
+.s7 .headliner-corner .num::before{content:"M.E. ";color:rgba(255,255,255,.4);}
+
+/* center brand block */
+.s7 .ring-center{
   position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
-  display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;pointer-events:none;}
-.s7 .ring-stage .center-block .lab{
-  font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;
-  color:var(--signal);}
-.s7 .ring-stage .center-block .deg{
-  font-family:"Unbounded",sans-serif;font-weight:900;font-size:38px;letter-spacing:-.05em;color:#fff;line-height:.9;
-  text-shadow:0 0 24px rgba(235,28,36,.7),0 18px 36px rgba(0,0,0,.6);}
-.s7 .ring-stage .center-block .sub{
-  font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);font-weight:600;}
+  display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;pointer-events:none;
+}
+.s7 .ring-center .badge{
+  font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;
+  background:var(--signal);color:#fff;padding:5px 11px 4px;
+  box-shadow:0 10px 28px -8px rgba(235,28,36,.6);
+}
+.s7 .ring-center .brand{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:54px;letter-spacing:-.07em;color:#fff;line-height:.84;text-transform:uppercase;
+  text-shadow:0 0 32px rgba(235,28,36,.7),0 18px 40px rgba(0,0,0,.7),3px 3px 0 var(--signal);
+}
+.s7 .ring-center .date{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.42em;color:rgba(255,255,255,.78);font-weight:700;
+  border-top:1px solid rgba(255,255,255,.2);border-bottom:1px solid rgba(255,255,255,.2);padding:5px 0 4px;margin-top:2px;
+}
+.s7 .ring-center .meta-line{
+  font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.36em;color:rgba(255,200,160,.7);font-weight:600;text-transform:uppercase;
+}
+
+/* ring corner labels (red/blue corner stamps) */
+.s7 .ring-stage .ring-stamp{
+  position:absolute;font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.32em;font-weight:700;
+  text-transform:uppercase;display:flex;align-items:center;gap:6px;
+}
+.s7 .ring-stage .ring-stamp::before{content:"";width:5px;height:5px;border-radius:50%;}
+.s7 .ring-stage .ring-stamp.red{color:rgba(235,90,80,.85);}
+.s7 .ring-stage .ring-stamp.red::before{background:var(--signal);box-shadow:0 0 8px var(--signal);}
+.s7 .ring-stage .ring-stamp.blue{color:rgba(150,180,255,.7);}
+.s7 .ring-stage .ring-stamp.blue::before{background:#5a8bff;box-shadow:0 0 8px #5a8bff;}
+.s7 .ring-stage .ring-stamp.tl{top:14px;left:18px;}
+.s7 .ring-stage .ring-stamp.tr{top:14px;right:18px;}
+.s7 .ring-stage .ring-stamp.bl{bottom:14px;left:18px;}
+.s7 .ring-stage .ring-stamp.br{bottom:14px;right:18px;}
+
+/* meta strip below ring */
 .s7 .ring-meta{
-  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;
   font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;}
 .s7 .ring-meta .cell{
-  padding:9px 11px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);
+  padding:10px 12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);
   display:flex;flex-direction:column;gap:3px;}
 .s7 .ring-meta .cell .l{color:rgba(255,255,255,.45);font-size:8px;}
-.s7 .ring-meta .cell .v{color:#fff;font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:14px;text-transform:uppercase;}
+.s7 .ring-meta .cell .v{color:#fff;font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:15px;text-transform:uppercase;}
 .s7 .ring-meta .cell .v em{font-style:normal;color:var(--signal);}
 
-/* ── FIGHT CARDS ── */
-.s7 .cards{display:flex;flex-direction:column;gap:10px;min-height:0;}
+/* ── FIGHT CARDS — only undercard + dj room (main event = ring) ── */
+.s7 .cards{display:flex;flex-direction:column;gap:12px;min-height:0;}
 .s7 .fight-card{
-  position:relative;display:flex;flex-direction:column;gap:8px;min-height:0;
+  position:relative;display:flex;flex-direction:column;gap:9px;min-height:0;
   border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(20,20,26,.72),rgba(10,10,14,.92));
-  padding:11px 14px;
-  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);
+  padding:13px 16px;
+  clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);
 }
-.s7 .fight-card.main-event{
-  background:linear-gradient(180deg,rgba(235,28,36,.16),rgba(20,20,26,.88));
-  border-color:rgba(235,28,36,.4);
-  box-shadow:0 18px 50px -22px rgba(235,28,36,.55),inset 0 1px 0 rgba(255,255,255,.06);
-  flex:1.55;
-}
-.s7 .fight-card.undercard{flex:2.1;}
-.s7 .fight-card.dj-room{flex:1.05;}
-.s7 .fight-card.dj-room{
+.s7 .fight-card.undercard{flex:2.4;}
+.s7 .fight-card.dj-room{flex:1.0;
   background:linear-gradient(180deg,rgba(120,160,255,.08),rgba(10,10,14,.92));
   border-color:rgba(170,200,255,.18);
 }
 
 .s7 .round-tag{
   display:flex;align-items:center;gap:10px;
-  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
 }
 .s7 .round-tag .r-num{
-  background:#fff;color:#0a0a0c;padding:3px 7px 2px;letter-spacing:.18em;font-weight:800;
+  background:#fff;color:#0a0a0c;padding:3px 8px 2px;letter-spacing:.18em;font-weight:800;
 }
-.s7 .main-event .round-tag .r-num{background:var(--signal);color:#fff;
-  box-shadow:0 6px 18px -4px rgba(235,28,36,.6);}
 .s7 .dj-room .round-tag .r-num{background:#aac8ff;color:#0a0a0c;}
 .s7 .round-tag .r-name{color:#fff;letter-spacing:.34em;}
 .s7 .round-tag .r-count{color:rgba(255,255,255,.45);margin-left:auto;font-weight:600;}
-.s7 .round-tag .r-bell{color:var(--orange);font-family:"Unbounded",sans-serif;letter-spacing:-.02em;font-size:11px;font-weight:800;}
+.s7 .round-tag .r-time{color:var(--orange);font-family:"Unbounded",sans-serif;letter-spacing:-.02em;font-size:12px;font-weight:800;text-transform:uppercase;}
+.s7 .dj-room .round-tag .r-time{color:#aac8ff;}
 
-.s7 .roster{display:grid;gap:5px;flex:1;min-height:0;}
-.s7 .main-event .roster{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);}
-.s7 .undercard .roster{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);}
-.s7 .dj-room .roster{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr);}
+.s7 .roster{display:grid;gap:6px;flex:1;min-height:0;}
+.s7 .undercard .roster{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(6,1fr);}
+.s7 .dj-room .roster{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);}
 
 .s7 .act{
   position:relative;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:7px 9px 8px;overflow:hidden;min-height:0;
+  padding:8px 11px 9px;overflow:hidden;min-height:0;
   border:1px solid rgba(255,255,255,.1);
   background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
-  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
+  clip-path:polygon(0 0,calc(100% - 9px) 0,100% 9px,100% 100%,0 100%);
 }
 .s7 .act .name{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.035em;color:#fff;text-transform:uppercase;line-height:.96;
   text-shadow:0 8px 18px rgba(0,0,0,.5);}
-.s7 .act .num{position:absolute;right:8px;top:7px;font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.22em;color:rgba(255,255,255,.4);font-weight:600;}
+.s7 .act .num{position:absolute;right:9px;top:8px;font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:.22em;color:rgba(255,255,255,.4);font-weight:600;}
 
-.s7 .main-event .act{
-  padding:9px 12px 10px;
-  border-color:rgba(255,200,160,.28);
-  background:linear-gradient(160deg,rgba(255,144,72,.18),rgba(235,28,36,.06));
-  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
-}
-.s7 .main-event .act::after{
-  content:"";position:absolute;left:0;top:0;right:10px;height:1px;
-  background:linear-gradient(90deg,rgba(255,180,120,.5),transparent);
-}
-.s7 .main-event .act .name{font-size:17px;line-height:.94;}
-.s7 .main-event .act .num{font-size:8.5px;color:rgba(255,200,160,.55);}
-.s7 .main-event .act .role{font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:.32em;color:rgba(255,200,160,.7);text-transform:uppercase;font-weight:700;margin-bottom:2px;}
-
-.s7 .undercard .act .name{font-size:12px;letter-spacing:-.03em;}
-.s7 .undercard .act.long .name{font-size:10px;}
-.s7 .undercard .act.xlong .name{font-size:9px;letter-spacing:-.02em;}
+.s7 .undercard .act .name{font-size:15px;letter-spacing:-.035em;}
+.s7 .undercard .act.long .name{font-size:12px;}
+.s7 .undercard .act.xlong .name{font-size:10.5px;letter-spacing:-.02em;}
 
 .s7 .dj-room .act{
   background:linear-gradient(160deg,rgba(170,200,255,.08),rgba(40,50,80,.04));
@@ -1006,8 +1025,8 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
   background:linear-gradient(180deg,rgba(170,200,255,.65),transparent);
 }
-.s7 .dj-room .act .name{font-size:11px;letter-spacing:-.025em;color:rgba(255,255,255,.95);}
-.s7 .dj-room .act.long .name{font-size:9.5px;}
+.s7 .dj-room .act .name{font-size:13px;letter-spacing:-.03em;color:rgba(255,255,255,.96);}
+.s7 .dj-room .act.long .name{font-size:11px;}
 .s7 .dj-room .act .num{color:rgba(170,200,255,.55);}
 
 .s7 .footnote{
@@ -1786,145 +1805,155 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
     </div>
 
     <div class="arena">
-      <!-- RING zone -->
+      <!-- RING zone — main event happens HERE -->
       <div class="ring-zone">
         <div class="ring-stage">
-          <span class="ring-corner tl">// red corner</span>
-          <span class="ring-corner tr">● 06.06.26</span>
-          <span class="ring-corner bl">// blue corner</span>
-          <span class="ring-corner br">360° // pov</span>
+          <span class="ring-stamp red tl">red corner</span>
+          <span class="ring-stamp red tr">06.06.26</span>
+          <span class="ring-stamp blue bl">blue corner</span>
+          <span class="ring-stamp blue br">360° pov</span>
 
-          <svg viewBox="0 0 400 400" aria-hidden="true">
+          <svg viewBox="0 0 1000 1000" aria-hidden="true">
             <defs>
-              <radialGradient id="s7-spot" cx="50%" cy="56%" r="46%">
+              <radialGradient id="s7-spot" cx="50%" cy="55%" r="42%">
                 <stop offset="0%" stop-color="rgba(235,28,36,0.55)"/>
-                <stop offset="60%" stop-color="rgba(235,28,36,0.12)"/>
+                <stop offset="55%" stop-color="rgba(235,28,36,0.10)"/>
                 <stop offset="100%" stop-color="rgba(235,28,36,0)"/>
               </radialGradient>
-              <radialGradient id="s7-glow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
-                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              <radialGradient id="s7-canvas" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(40,8,10,0.9)"/>
+                <stop offset="100%" stop-color="rgba(8,8,12,1)"/>
               </radialGradient>
             </defs>
-            <!-- audience: dashed concentric circles -->
-            <circle cx="200" cy="200" r="198" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="2 5"/>
-            <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="1 3"/>
-            <!-- audience dots: 32 around the ring -->
-            <g fill="rgba(255,255,255,0.5)">
-              <circle cx="200" cy="14" r="2.4"/>
-              <circle cx="236.5" cy="17.6" r="2"/>
-              <circle cx="271.5" cy="28.3" r="2"/>
-              <circle cx="304.4" cy="45.6" r="2"/>
-              <circle cx="334.1" cy="69" r="2"/>
-              <circle cx="359.6" cy="98.5" r="2"/>
-              <circle cx="380" cy="132.6" r="2"/>
-              <circle cx="394.3" cy="170.1" r="2"/>
-              <circle cx="402" cy="209.6" r="2"/>
-              <circle cx="402" cy="249.4" r="2"/>
-              <circle cx="394.3" cy="288.9" r="2"/>
-              <circle cx="380" cy="326.4" r="2"/>
-              <circle cx="359.6" cy="360.5" r="2"/>
-              <circle cx="334.1" cy="390" r="2"/>
-              <circle cx="304.4" cy="413.4" r="2"/>
-              <circle cx="271.5" cy="430.7" r="2"/>
-              <circle cx="200" cy="386" r="2.4"/>
-              <circle cx="163.5" cy="382.4" r="2"/>
-              <circle cx="128.5" cy="371.7" r="2"/>
-              <circle cx="95.6" cy="354.4" r="2"/>
-              <circle cx="65.9" cy="331" r="2"/>
-              <circle cx="40.4" cy="301.5" r="2"/>
-              <circle cx="20" cy="267.4" r="2"/>
-              <circle cx="5.7" cy="229.9" r="2"/>
-              <circle cx="-2" cy="190.4" r="2"/>
-              <circle cx="-2" cy="150.6" r="2"/>
-              <circle cx="5.7" cy="111.1" r="2"/>
-              <circle cx="20" cy="73.6" r="2"/>
-              <circle cx="40.4" cy="39.5" r="2"/>
-              <circle cx="65.9" cy="10" r="2"/>
-              <circle cx="95.6" cy="-13.4" r="2"/>
-              <circle cx="128.5" cy="-30.7" r="2"/>
+
+            <!-- spotlight halo on the canvas -->
+            <circle cx="500" cy="540" r="380" fill="url(#s7-spot)"/>
+
+            <!-- ROPES: outer to mid octagon edges -->
+            <g stroke="rgba(255,255,255,0.22)" stroke-width="1.2">
+              <line x1="614.8" y1="222.8" x2="591.8" y2="278.2"/>
+              <line x1="777.2" y1="385.2" x2="721.8" y2="408.2"/>
+              <line x1="777.2" y1="614.8" x2="721.8" y2="591.8"/>
+              <line x1="614.8" y1="777.2" x2="591.8" y2="721.8"/>
+              <line x1="385.2" y1="777.2" x2="408.2" y2="721.8"/>
+              <line x1="222.8" y1="614.8" x2="278.2" y2="591.8"/>
+              <line x1="222.8" y1="385.2" x2="278.2" y2="408.2"/>
+              <line x1="385.2" y1="222.8" x2="408.2" y2="278.2"/>
             </g>
-            <!-- inner spotlight glow -->
-            <circle cx="200" cy="220" r="160" fill="url(#s7-spot)"/>
-            <!-- ROPES from outer to mid octagon -->
-            <g stroke="rgba(255,255,255,0.22)" stroke-width="1">
-              <line x1="269" y1="34" x2="253.6" y2="70.6"/>
-              <line x1="366" y1="131" x2="329.4" y2="146.4"/>
-              <line x1="366" y1="269" x2="329.4" y2="253.6"/>
-              <line x1="269" y1="366" x2="253.6" y2="329.4"/>
-              <line x1="131" y1="366" x2="146.4" y2="329.4"/>
-              <line x1="34" y1="269" x2="70.6" y2="253.6"/>
-              <line x1="34" y1="131" x2="70.6" y2="146.4"/>
-              <line x1="131" y1="34" x2="146.4" y2="70.6"/>
+
+            <!-- OUTER octagon (red glow) r=300 -->
+            <polygon points="614.8,222.8 777.2,385.2 777.2,614.8 614.8,777.2 385.2,777.2 222.8,614.8 222.8,385.2 385.2,222.8"
+                     fill="none" stroke="rgba(235,28,36,0.9)" stroke-width="2.5"
+                     style="filter:drop-shadow(0 0 14px rgba(235,28,36,0.7));"/>
+
+            <!-- MID octagon r=240 -->
+            <polygon points="591.8,278.2 721.8,408.2 721.8,591.8 591.8,721.8 408.2,721.8 278.2,591.8 278.2,408.2 408.2,278.2"
+                     fill="rgba(20,5,8,0.4)" stroke="rgba(255,255,255,0.20)" stroke-width="1.2"/>
+
+            <!-- INNER stage octagon r=160 -->
+            <polygon points="561.2,352.1 647.9,439.4 647.9,560.6 561.2,647.9 438.8,647.9 352.1,560.6 352.1,439.4 438.8,352.1"
+                     fill="rgba(235,28,36,0.05)" stroke="rgba(255,255,255,0.45)" stroke-width="1.4"
+                     stroke-dasharray="4 4"/>
+
+            <!-- crosshairs through center inside stage -->
+            <g stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3 5">
+              <line x1="500" y1="352.1" x2="500" y2="647.9"/>
+              <line x1="352.1" y1="500" x2="647.9" y2="500"/>
             </g>
-            <!-- OCTAGONS: outer / mid / inner stage -->
-            <polygon points="269,34 366,131 366,269 269,366 131,366 34,269 34,131 131,34"
-                     fill="none" stroke="rgba(235,28,36,0.85)" stroke-width="2.2"
-                     style="filter:drop-shadow(0 0 12px rgba(235,28,36,0.6));"/>
-            <polygon points="253.6,70.6 329.4,146.4 329.4,253.6 253.6,329.4 146.4,329.4 70.6,253.6 70.6,146.4 146.4,70.6"
-                     fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-            <polygon points="234.4,116.8 283.2,165.5 283.2,234.5 234.4,283.2 165.6,283.2 116.8,234.5 116.8,165.5 165.6,116.8"
-                     fill="rgba(235,28,36,0.06)" stroke="rgba(255,255,255,0.42)" stroke-width="1.4"
-                     stroke-dasharray="3 3"/>
-            <!-- corner dots (red corners + neutral) -->
+
+            <!-- corner dots: red top + bottom (red corner), blue diagonals -->
             <g>
-              <circle cx="269" cy="34" r="5" fill="#eb1c24" style="filter:drop-shadow(0 0 8px rgba(235,28,36,0.9));"/>
-              <circle cx="269" cy="366" r="5" fill="#eb1c24" style="filter:drop-shadow(0 0 8px rgba(235,28,36,0.9));"/>
-              <circle cx="131" cy="34" r="5" fill="#5a8bff" style="filter:drop-shadow(0 0 6px rgba(90,139,255,0.8));"/>
-              <circle cx="131" cy="366" r="5" fill="#5a8bff" style="filter:drop-shadow(0 0 6px rgba(90,139,255,0.8));"/>
-              <circle cx="366" cy="131" r="3" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="366" cy="269" r="3" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="34" cy="131" r="3" fill="rgba(255,255,255,0.6)"/>
-              <circle cx="34" cy="269" r="3" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="614.8" cy="222.8" r="7" fill="#eb1c24" style="filter:drop-shadow(0 0 12px rgba(235,28,36,0.9));"/>
+              <circle cx="614.8" cy="777.2" r="7" fill="#eb1c24" style="filter:drop-shadow(0 0 12px rgba(235,28,36,0.9));"/>
+              <circle cx="385.2" cy="222.8" r="7" fill="#5a8bff" style="filter:drop-shadow(0 0 10px rgba(90,139,255,0.85));"/>
+              <circle cx="385.2" cy="777.2" r="7" fill="#5a8bff" style="filter:drop-shadow(0 0 10px rgba(90,139,255,0.85));"/>
+              <circle cx="777.2" cy="385.2" r="4" fill="rgba(255,255,255,0.65)"/>
+              <circle cx="777.2" cy="614.8" r="4" fill="rgba(255,255,255,0.65)"/>
+              <circle cx="222.8" cy="385.2" r="4" fill="rgba(255,255,255,0.65)"/>
+              <circle cx="222.8" cy="614.8" r="4" fill="rgba(255,255,255,0.65)"/>
             </g>
-            <!-- crosshairs through center -->
-            <g stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="2 4">
-              <line x1="200" y1="116.8" x2="200" y2="283.2"/>
-              <line x1="116.8" y1="200" x2="283.2" y2="200"/>
+
+            <!-- side guide-lines pointing to headliners (subtle radial spokes) -->
+            <g stroke="rgba(255,255,255,0.08)" stroke-width="1">
+              <line x1="500" y1="500" x2="500" y2="223"/>
+              <line x1="500" y1="500" x2="696.4" y2="303.6"/>
+              <line x1="500" y1="500" x2="777" y2="500"/>
+              <line x1="500" y1="500" x2="696.4" y2="696.4"/>
+              <line x1="500" y1="500" x2="500" y2="777"/>
+              <line x1="500" y1="500" x2="303.6" y2="696.4"/>
+              <line x1="500" y1="500" x2="223" y2="500"/>
+              <line x1="500" y1="500" x2="303.6" y2="303.6"/>
             </g>
           </svg>
 
-          <div class="center-block">
-            <span class="lab">// center stage</span>
-            <span class="deg">RING</span>
-            <span class="sub">octagon · 360° · live</span>
+          <!-- 8 HEADLINERS at the 8 sides of the octagon -->
+          <div class="headliner-corner" style="--x:50%;--y:9%;">
+            <span class="role">title · live</span>
+            <span class="name">Жак Энтони</span>
+            <span class="num">01</span>
+          </div>
+          <div class="headliner-corner" style="--x:80%;--y:21%;">
+            <span class="role">title · live</span>
+            <span class="name">Благо Вайт</span>
+            <span class="num">02</span>
+          </div>
+          <div class="headliner-corner" style="--x:91%;--y:50%;">
+            <span class="role">title · r&amp;b</span>
+            <span class="name">Кристина<br>Си</span>
+            <span class="num">03</span>
+          </div>
+          <div class="headliner-corner" style="--x:80%;--y:79%;">
+            <span class="role">title · hip-hop</span>
+            <span class="name">Гафур</span>
+            <span class="num">04</span>
+          </div>
+          <div class="headliner-corner" style="--x:50%;--y:91%;">
+            <span class="role">title · pop</span>
+            <span class="name">ANDRO</span>
+            <span class="num">05</span>
+          </div>
+          <div class="headliner-corner" style="--x:20%;--y:79%;">
+            <span class="role">title · pop</span>
+            <span class="name">Адель</span>
+            <span class="num">06</span>
+          </div>
+          <div class="headliner-corner" style="--x:9%;--y:50%;">
+            <span class="role">title · alt</span>
+            <span class="name">Биовульф</span>
+            <span class="num">07</span>
+          </div>
+          <div class="headliner-corner" style="--x:20%;--y:21%;">
+            <span class="role">title · hip-hop</span>
+            <span class="name">DONI</span>
+            <span class="num">08</span>
+          </div>
+
+          <!-- center brand: this IS the main event card -->
+          <div class="ring-center">
+            <span class="badge">● R 01 · main event</span>
+            <span class="brand">STAK<br>ARENA</span>
+            <span class="date">06 · 06 · 26</span>
+            <span class="meta-line">8 headliners · 360° pov</span>
           </div>
         </div>
+
+        <!-- meta strip below ring -->
         <div class="ring-meta">
           <div class="cell"><span class="l">// rounds</span><span class="v"><em>3</em>&nbsp;БЛОКА</span></div>
-          <div class="cell"><span class="l">// total</span><span class="v">44 acts</span></div>
+          <div class="cell"><span class="l">// roster</span><span class="v">44 acts</span></div>
           <div class="cell"><span class="l">// pov</span><span class="v">360°</span></div>
           <div class="cell"><span class="l">// time</span><span class="v">22→06</span></div>
         </div>
       </div>
 
-      <!-- FIGHT CARDS -->
+      <!-- FIGHT CARDS — undercard + dj room (main event lives in the ring) -->
       <div class="cards">
-        <!-- ROUND 1 — MAIN EVENT -->
-        <div class="fight-card main-event">
-          <div class="round-tag">
-            <span class="r-num">R&nbsp;01</span>
-            <span class="r-name">main event · headliners</span>
-            <span class="r-bell">●</span>
-            <span class="r-count">8 / 44</span>
-          </div>
-          <div class="roster">
-            <div class="act"><span class="role">title · live</span><span class="name">Жак<br>Энтони</span><span class="num">01</span></div>
-            <div class="act"><span class="role">title · live</span><span class="name">Благо<br>Вайт</span><span class="num">02</span></div>
-            <div class="act"><span class="role">title · r&amp;b</span><span class="name">Кристина<br>Си</span><span class="num">03</span></div>
-            <div class="act"><span class="role">title · hip-hop</span><span class="name">Гафур</span><span class="num">04</span></div>
-            <div class="act"><span class="role">title · pop</span><span class="name">ANDRO</span><span class="num">05</span></div>
-            <div class="act"><span class="role">title · pop</span><span class="name">Адель</span><span class="num">06</span></div>
-            <div class="act"><span class="role">title · alt</span><span class="name">Биовульф</span><span class="num">07</span></div>
-            <div class="act"><span class="role">title · hip-hop</span><span class="name">DONI</span><span class="num">08</span></div>
-          </div>
-        </div>
-
         <!-- ROUND 2 — UNDERCARD -->
         <div class="fight-card undercard">
           <div class="round-tag">
             <span class="r-num">R&nbsp;02</span>
             <span class="r-name">undercard · artists</span>
+            <span class="r-time">00 → 04</span>
             <span class="r-count">24 / 44</span>
           </div>
           <div class="roster">
@@ -1937,7 +1966,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
             <div class="act"><span class="name">G4OUR</span><span class="num">15</span></div>
             <div class="act"><span class="name">RVMZES</span><span class="num">16</span></div>
             <div class="act"><span class="name">ARITA</span><span class="num">17</span></div>
-            <div class="act long"><span class="name">DIMA<br>URIH</span><span class="num">18</span></div>
+            <div class="act long"><span class="name">DIMA URIH</span><span class="num">18</span></div>
             <div class="act"><span class="name">ROXXI</span><span class="num">19</span></div>
             <div class="act xlong"><span class="name">ZAUR&amp;<br>MEIRINKITO</span><span class="num">20</span></div>
             <div class="act"><span class="name">ARINTU</span><span class="num">21</span></div>
@@ -1946,7 +1975,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
             <div class="act"><span class="name">FLOCKAA</span><span class="num">24</span></div>
             <div class="act long"><span class="name">LUVDA-<br>KASH</span><span class="num">25</span></div>
             <div class="act"><span class="name">SUDEAL</span><span class="num">26</span></div>
-            <div class="act xlong"><span class="name">КИСЛО-<br>СЛАДКИЙ<br>с&nbsp;БОНА</span><span class="num">27</span></div>
+            <div class="act xlong"><span class="name">КИСЛО-СЛАДКИЙ<br>с&nbsp;БОНА</span><span class="num">27</span></div>
             <div class="act"><span class="name">EKHO017</span><span class="num">28</span></div>
             <div class="act"><span class="name">LYAPO</span><span class="num">29</span></div>
             <div class="act"><span class="name">APRIEL</span><span class="num">30</span></div>
@@ -1960,16 +1989,17 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
           <div class="round-tag">
             <span class="r-num">R&nbsp;03</span>
             <span class="r-name">dj room · electronica</span>
+            <span class="r-time">22 → 00</span>
             <span class="r-count">12 / 44</span>
           </div>
           <div class="roster">
             <div class="act"><span class="name">KIIDA</span><span class="num">33</span></div>
-            <div class="act long"><span class="name">STAS<br>SATORI</span><span class="num">34</span></div>
+            <div class="act long"><span class="name">STAS SATORI</span><span class="num">34</span></div>
             <div class="act long"><span class="name">RUSLAN<br>FYUCHA</span><span class="num">35</span></div>
-            <div class="act long"><span class="name">PRETTY<br>VARDI</span><span class="num">36</span></div>
+            <div class="act long"><span class="name">PRETTY VARDI</span><span class="num">36</span></div>
             <div class="act long"><span class="name">SAYNO-<br>MOCUZ</span><span class="num">37</span></div>
             <div class="act long"><span class="name">Яна<br>Индигарка</span><span class="num">38</span></div>
-            <div class="act long"><span class="name">ANNA<br>DARK</span><span class="num">39</span></div>
+            <div class="act long"><span class="name">ANNA DARK</span><span class="num">39</span></div>
             <div class="act"><span class="name">PTICHKA</span><span class="num">40</span></div>
             <div class="act"><span class="name">SHABA</span><span class="num">41</span></div>
             <div class="act"><span class="name">EZZA</span><span class="num">42</span></div>
