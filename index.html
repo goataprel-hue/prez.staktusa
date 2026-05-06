@@ -862,97 +862,158 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 .s6 .ghost{position:absolute;left:-2%;top:38%;font-family:"Unbounded",sans-serif;font-weight:900;font-size:560px;letter-spacing:-.09em;color:rgba(14,13,11,.04);text-transform:uppercase;line-height:.84;pointer-events:none;}
 
 /* ═════════════════════════════════════════════════════
-   SLIDE 7 — ARTISTS
+   SLIDE 7 — ARENA / RING NIGHT
    ═════════════════════════════════════════════════════ */
 .s7{background:#0a0a0c;color:#fff;}
 .s7 .stage-bg{position:absolute;inset:0;background:
-  radial-gradient(circle at 50% -10%,rgba(235,28,36,.36),transparent 38%),
-  radial-gradient(circle at 50% 110%,rgba(255,144,72,.28),transparent 40%),
+  radial-gradient(circle at 22% 50%,rgba(235,28,36,.42),transparent 36%),
+  radial-gradient(circle at 80% 90%,rgba(255,144,72,.22),transparent 44%),
   linear-gradient(180deg,#0d0d11,#06060a);}
-.s7 .body{position:absolute;inset:96px 96px 72px 96px;display:flex;flex-direction:column;gap:18px;}
-.s7 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:48px;}
+.s7 .body{position:absolute;inset:84px 80px 64px 80px;display:flex;flex-direction:column;gap:14px;}
+
+/* HEADER */
+.s7 .head{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;}
+.s7 .head .title-block{display:flex;flex-direction:column;gap:8px;}
+.s7 .arena-tag{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;
+  background:var(--signal);color:#fff;padding:8px 14px 7px;
+  box-shadow:0 12px 28px -8px rgba(235,28,36,.55);}
+.s7 .arena-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:#fff;
+  box-shadow:0 0 0 3px rgba(255,255,255,.2);animation:s7pulse 1.6s infinite;}
+@keyframes s7pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(.8);}}
 .s7 h2{
-  font-family:"Unbounded",sans-serif;font-weight:900;font-size:84px;line-height:.86;
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:68px;line-height:.86;
   letter-spacing:-.07em;text-transform:uppercase;color:#fff;
   text-shadow:2px 2px 0 var(--signal),4px 4px 0 rgba(0,0,0,.5),0 28px 60px rgba(235,28,36,.32);
 }
 .s7 h2 em{font-style:normal;color:var(--signal);}
-.s7 .lead{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:right;max-width:440px;line-height:1.65;font-weight:500;}
-.s7 .lineup{display:flex;flex-direction:column;gap:14px;flex:1;min-height:0;}
-.s7 .lineup-section{display:flex;flex-direction:column;gap:8px;min-height:0;}
-.s7 .lineup-section.head-block{flex:1.45;}
-.s7 .lineup-section.artists-block{flex:2.0;}
-.s7 .lineup-section.djs-block{flex:1.0;}
-.s7 .section-label{
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:rgba(255,255,255,.5);font-weight:600;
-}
-.s7 .section-label::before{
-  content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.18),transparent);
-}
-.s7 .section-label .lab{color:#fff;letter-spacing:.32em;}
-.s7 .section-label .num{color:var(--signal);font-weight:700;}
-.s7 .grid-head{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);gap:10px;flex:1;min-height:0;}
-.s7 .grid-artists{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);gap:6px;flex:1;min-height:0;}
-.s7 .grid-djs{display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr);gap:6px;flex:1;min-height:0;}
-.s7 .artist{
-  position:relative;border:1px solid rgba(255,255,255,.16);
-  background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
-  padding:10px 12px;display:flex;flex-direction:column;gap:4px;justify-content:flex-end;
-  overflow:hidden;min-height:0;
-  clip-path:polygon(0 0,calc(100% - 12px) 0,100% 12px,100% 100%,0 100%);
-  box-shadow:
-    0 1px 0 rgba(255,255,255,.1) inset,
-    0 -1px 0 rgba(0,0,0,.4) inset,
-    0 18px 36px -22px rgba(0,0,0,.55);
-}
-.s7 .artist::after{
-  content:"";position:absolute;left:0;top:0;right:12px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);
-}
-.s7 .artist .role{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.3em;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600;}
-.s7 .artist .name{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.035em;color:#fff;text-transform:uppercase;line-height:.96;
-  text-shadow:0 12px 24px rgba(0,0,0,.5);}
-.s7 .artist .num{position:absolute;right:12px;top:10px;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.26em;color:rgba(255,255,255,.4);font-weight:600;}
+.s7 .lead{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.28em;color:rgba(255,255,255,.6);text-transform:uppercase;text-align:right;max-width:380px;line-height:1.65;font-weight:500;}
 
-.s7 .grid-head .artist{padding:10px 16px 12px;clip-path:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);}
-.s7 .grid-head .artist .role{font-size:9px;}
-.s7 .grid-head .artist .name{font-size:18px;line-height:.94;}
-.s7 .grid-head .artist .num{font-size:9.5px;right:12px;top:9px;}
-.s7 .grid-head .artist.head{
-  background:linear-gradient(160deg,rgba(235,28,36,.95),rgba(255,144,72,.82));
-  border-color:rgba(255,255,255,.22);
-  box-shadow:0 24px 50px -18px rgba(235,28,36,.5);
+/* ARENA layout */
+.s7 .arena{display:grid;grid-template-columns:36% 1fr;gap:24px;flex:1;min-height:0;}
+
+/* ── RING zone ── */
+.s7 .ring-zone{position:relative;display:flex;flex-direction:column;gap:12px;min-height:0;}
+.s7 .ring-stage{position:relative;flex:1;min-height:0;
+  border:1px solid rgba(255,255,255,.12);
+  background:radial-gradient(circle at 50% 60%,rgba(235,28,36,.18),transparent 55%),
+             linear-gradient(180deg,rgba(20,20,26,.7),rgba(8,8,12,.95));
+  overflow:hidden;clip-path:polygon(0 0,calc(100% - 18px) 0,100% 18px,100% 100%,0 100%);}
+.s7 .ring-stage svg{position:absolute;inset:0;width:100%;height:100%;}
+.s7 .ring-stage .ring-corner{
+  position:absolute;font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.32em;font-weight:700;
+  text-transform:uppercase;color:rgba(255,255,255,.42);}
+.s7 .ring-stage .ring-corner.tl{top:14px;left:18px;}
+.s7 .ring-stage .ring-corner.tr{top:14px;right:18px;color:var(--signal);}
+.s7 .ring-stage .ring-corner.bl{bottom:14px;left:18px;}
+.s7 .ring-stage .ring-corner.br{bottom:14px;right:18px;}
+.s7 .ring-stage .center-block{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;pointer-events:none;}
+.s7 .ring-stage .center-block .lab{
+  font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.42em;text-transform:uppercase;font-weight:700;
+  color:var(--signal);}
+.s7 .ring-stage .center-block .deg{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:38px;letter-spacing:-.05em;color:#fff;line-height:.9;
+  text-shadow:0 0 24px rgba(235,28,36,.7),0 18px 36px rgba(0,0,0,.6);}
+.s7 .ring-stage .center-block .sub{
+  font-family:"IBM Plex Mono",monospace;font-size:8.5px;letter-spacing:.34em;text-transform:uppercase;
+  color:rgba(255,255,255,.55);font-weight:600;}
+.s7 .ring-meta{
+  display:grid;grid-template-columns:1fr 1fr;gap:8px;
+  font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:600;}
+.s7 .ring-meta .cell{
+  padding:9px 11px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);
+  display:flex;flex-direction:column;gap:3px;}
+.s7 .ring-meta .cell .l{color:rgba(255,255,255,.45);font-size:8px;}
+.s7 .ring-meta .cell .v{color:#fff;font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:14px;text-transform:uppercase;}
+.s7 .ring-meta .cell .v em{font-style:normal;color:var(--signal);}
+
+/* ── FIGHT CARDS ── */
+.s7 .cards{display:flex;flex-direction:column;gap:10px;min-height:0;}
+.s7 .fight-card{
+  position:relative;display:flex;flex-direction:column;gap:8px;min-height:0;
+  border:1px solid rgba(255,255,255,.12);background:linear-gradient(180deg,rgba(20,20,26,.72),rgba(10,10,14,.92));
+  padding:11px 14px;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,0 100%);
 }
-.s7 .grid-head .artist.head .role{color:rgba(255,255,255,.88);}
-.s7 .grid-head .artist.head .name{color:#fff;}
-.s7 .grid-head .artist.head .num{color:rgba(255,255,255,.78);}
-
-.s7 .grid-artists .artist{padding:8px 10px 9px;clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);}
-.s7 .grid-artists .artist .name{font-size:13px;letter-spacing:-.03em;line-height:.98;}
-.s7 .grid-artists .artist .num{font-size:8px;right:8px;top:6px;letter-spacing:.22em;}
-.s7 .grid-artists .artist.long .name{font-size:11px;}
-.s7 .grid-artists .artist.xlong .name{font-size:9.5px;letter-spacing:-.02em;}
-
-.s7 .grid-djs{}
-.s7 .grid-djs .artist{
-  padding:8px 10px 9px;
-  background:linear-gradient(160deg,rgba(120,160,255,.12),rgba(80,90,150,.04));
+.s7 .fight-card.main-event{
+  background:linear-gradient(180deg,rgba(235,28,36,.16),rgba(20,20,26,.88));
+  border-color:rgba(235,28,36,.4);
+  box-shadow:0 18px 50px -22px rgba(235,28,36,.55),inset 0 1px 0 rgba(255,255,255,.06);
+  flex:1.55;
+}
+.s7 .fight-card.undercard{flex:2.1;}
+.s7 .fight-card.dj-room{flex:1.05;}
+.s7 .fight-card.dj-room{
+  background:linear-gradient(180deg,rgba(120,160,255,.08),rgba(10,10,14,.92));
   border-color:rgba(170,200,255,.18);
+}
+
+.s7 .round-tag{
+  display:flex;align-items:center;gap:10px;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;font-weight:700;
+}
+.s7 .round-tag .r-num{
+  background:#fff;color:#0a0a0c;padding:3px 7px 2px;letter-spacing:.18em;font-weight:800;
+}
+.s7 .main-event .round-tag .r-num{background:var(--signal);color:#fff;
+  box-shadow:0 6px 18px -4px rgba(235,28,36,.6);}
+.s7 .dj-room .round-tag .r-num{background:#aac8ff;color:#0a0a0c;}
+.s7 .round-tag .r-name{color:#fff;letter-spacing:.34em;}
+.s7 .round-tag .r-count{color:rgba(255,255,255,.45);margin-left:auto;font-weight:600;}
+.s7 .round-tag .r-bell{color:var(--orange);font-family:"Unbounded",sans-serif;letter-spacing:-.02em;font-size:11px;font-weight:800;}
+
+.s7 .roster{display:grid;gap:5px;flex:1;min-height:0;}
+.s7 .main-event .roster{grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(2,1fr);}
+.s7 .undercard .roster{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(4,1fr);}
+.s7 .dj-room .roster{grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(2,1fr);}
+
+.s7 .act{
+  position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:7px 9px 8px;overflow:hidden;min-height:0;
+  border:1px solid rgba(255,255,255,.1);
+  background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));
   clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,0 100%);
 }
-.s7 .grid-djs .artist::before{
-  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:linear-gradient(180deg,rgba(170,200,255,.7),transparent);
+.s7 .act .name{font-family:"Unbounded",sans-serif;font-weight:800;letter-spacing:-.035em;color:#fff;text-transform:uppercase;line-height:.96;
+  text-shadow:0 8px 18px rgba(0,0,0,.5);}
+.s7 .act .num{position:absolute;right:8px;top:7px;font-family:"IBM Plex Mono",monospace;font-size:7.5px;letter-spacing:.22em;color:rgba(255,255,255,.4);font-weight:600;}
+
+.s7 .main-event .act{
+  padding:9px 12px 10px;
+  border-color:rgba(255,200,160,.28);
+  background:linear-gradient(160deg,rgba(255,144,72,.18),rgba(235,28,36,.06));
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,0 100%);
 }
-.s7 .grid-djs .artist .name{font-size:12px;letter-spacing:-.025em;line-height:.98;color:rgba(255,255,255,.95);}
-.s7 .grid-djs .artist .num{font-size:8px;right:8px;top:6px;letter-spacing:.22em;color:rgba(170,200,255,.55);}
-.s7 .grid-djs .artist.long .name{font-size:10px;}
+.s7 .main-event .act::after{
+  content:"";position:absolute;left:0;top:0;right:10px;height:1px;
+  background:linear-gradient(90deg,rgba(255,180,120,.5),transparent);
+}
+.s7 .main-event .act .name{font-size:17px;line-height:.94;}
+.s7 .main-event .act .num{font-size:8.5px;color:rgba(255,200,160,.55);}
+.s7 .main-event .act .role{font-family:"IBM Plex Mono",monospace;font-size:8px;letter-spacing:.32em;color:rgba(255,200,160,.7);text-transform:uppercase;font-weight:700;margin-bottom:2px;}
+
+.s7 .undercard .act .name{font-size:12px;letter-spacing:-.03em;}
+.s7 .undercard .act.long .name{font-size:10px;}
+.s7 .undercard .act.xlong .name{font-size:9px;letter-spacing:-.02em;}
+
+.s7 .dj-room .act{
+  background:linear-gradient(160deg,rgba(170,200,255,.08),rgba(40,50,80,.04));
+  border-color:rgba(170,200,255,.16);
+}
+.s7 .dj-room .act::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,rgba(170,200,255,.65),transparent);
+}
+.s7 .dj-room .act .name{font-size:11px;letter-spacing:-.025em;color:rgba(255,255,255,.95);}
+.s7 .dj-room .act.long .name{font-size:9.5px;}
+.s7 .dj-room .act .num{color:rgba(170,200,255,.55);}
 
 .s7 .footnote{
   display:flex;align-items:center;justify-content:space-between;gap:20px;
-  border-top:1px solid rgba(255,255,255,.14);padding-top:14px;
-  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.26em;color:rgba(255,255,255,.55);text-transform:uppercase;font-weight:500;
+  border-top:1px solid rgba(255,255,255,.14);padding-top:11px;
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.26em;color:rgba(255,255,255,.55);text-transform:uppercase;font-weight:500;
 }
 .s7 .footnote em{font-style:normal;color:var(--signal);font-weight:700;}
 
@@ -1711,89 +1772,223 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa</span></div>
-    <span>07 / 11 · line-up</span>
-    <span>electronica → hip-hop · 44 acts</span>
+    <span>07 / 11 · arena</span>
+    <span>octagon · 360° · 44 acts</span>
   </div>
 
   <div class="body">
     <div class="head">
-      <h2>Музыкальная<br>линия —&nbsp;<em>от&nbsp;рассвета<br>до&nbsp;кульминации.</em></h2>
-      <div class="lead">Кураторская программа. Сцена плавно разгоняется от&nbsp;электроники до&nbsp;hip-hop кульминации. Специальные форматы и&nbsp;кураторские блоки.</div>
+      <div class="title-block">
+        <span class="arena-tag">stak arena · live · 360°</span>
+        <h2>Артисты —&nbsp;<em>в&nbsp;ринге.</em><br>Зрители —&nbsp;вокруг.</h2>
+      </div>
+      <div class="lead">Сцена-октагон в&nbsp;центре зала. Артисты и&nbsp;диджеи бьют live в&nbsp;360° перед публикой со&nbsp;всех сторон. Три раунда — один вечер.</div>
     </div>
 
-    <div class="lineup">
-      <div class="lineup-section head-block">
-        <div class="section-label"><span class="lab">// headliners</span><span class="num">08 / 44</span></div>
-        <div class="grid-head">
-          <div class="artist head"><span class="role">headliner · live</span><span class="name">Жак<br>Энтони</span><span class="num">01</span></div>
-          <div class="artist head"><span class="role">headliner · live</span><span class="name">Благо<br>Вайт</span><span class="num">02</span></div>
-          <div class="artist head"><span class="role">headliner · r&amp;b</span><span class="name">Кристина<br>Си</span><span class="num">03</span></div>
-          <div class="artist head"><span class="role">headliner · hip-hop</span><span class="name">Гафур</span><span class="num">04</span></div>
-          <div class="artist head"><span class="role">headliner · pop</span><span class="name">ANDRO</span><span class="num">05</span></div>
-          <div class="artist head"><span class="role">headliner · pop</span><span class="name">Адель</span><span class="num">06</span></div>
-          <div class="artist head"><span class="role">headliner · alt</span><span class="name">Биовульф</span><span class="num">07</span></div>
-          <div class="artist head"><span class="role">headliner · hip-hop</span><span class="name">DONI</span><span class="num">08</span></div>
+    <div class="arena">
+      <!-- RING zone -->
+      <div class="ring-zone">
+        <div class="ring-stage">
+          <span class="ring-corner tl">// red corner</span>
+          <span class="ring-corner tr">● 06.06.26</span>
+          <span class="ring-corner bl">// blue corner</span>
+          <span class="ring-corner br">360° // pov</span>
+
+          <svg viewBox="0 0 400 400" aria-hidden="true">
+            <defs>
+              <radialGradient id="s7-spot" cx="50%" cy="56%" r="46%">
+                <stop offset="0%" stop-color="rgba(235,28,36,0.55)"/>
+                <stop offset="60%" stop-color="rgba(235,28,36,0.12)"/>
+                <stop offset="100%" stop-color="rgba(235,28,36,0)"/>
+              </radialGradient>
+              <radialGradient id="s7-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              </radialGradient>
+            </defs>
+            <!-- audience: dashed concentric circles -->
+            <circle cx="200" cy="200" r="198" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="1" stroke-dasharray="2 5"/>
+            <circle cx="200" cy="200" r="190" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="1 3"/>
+            <!-- audience dots: 32 around the ring -->
+            <g fill="rgba(255,255,255,0.5)">
+              <circle cx="200" cy="14" r="2.4"/>
+              <circle cx="236.5" cy="17.6" r="2"/>
+              <circle cx="271.5" cy="28.3" r="2"/>
+              <circle cx="304.4" cy="45.6" r="2"/>
+              <circle cx="334.1" cy="69" r="2"/>
+              <circle cx="359.6" cy="98.5" r="2"/>
+              <circle cx="380" cy="132.6" r="2"/>
+              <circle cx="394.3" cy="170.1" r="2"/>
+              <circle cx="402" cy="209.6" r="2"/>
+              <circle cx="402" cy="249.4" r="2"/>
+              <circle cx="394.3" cy="288.9" r="2"/>
+              <circle cx="380" cy="326.4" r="2"/>
+              <circle cx="359.6" cy="360.5" r="2"/>
+              <circle cx="334.1" cy="390" r="2"/>
+              <circle cx="304.4" cy="413.4" r="2"/>
+              <circle cx="271.5" cy="430.7" r="2"/>
+              <circle cx="200" cy="386" r="2.4"/>
+              <circle cx="163.5" cy="382.4" r="2"/>
+              <circle cx="128.5" cy="371.7" r="2"/>
+              <circle cx="95.6" cy="354.4" r="2"/>
+              <circle cx="65.9" cy="331" r="2"/>
+              <circle cx="40.4" cy="301.5" r="2"/>
+              <circle cx="20" cy="267.4" r="2"/>
+              <circle cx="5.7" cy="229.9" r="2"/>
+              <circle cx="-2" cy="190.4" r="2"/>
+              <circle cx="-2" cy="150.6" r="2"/>
+              <circle cx="5.7" cy="111.1" r="2"/>
+              <circle cx="20" cy="73.6" r="2"/>
+              <circle cx="40.4" cy="39.5" r="2"/>
+              <circle cx="65.9" cy="10" r="2"/>
+              <circle cx="95.6" cy="-13.4" r="2"/>
+              <circle cx="128.5" cy="-30.7" r="2"/>
+            </g>
+            <!-- inner spotlight glow -->
+            <circle cx="200" cy="220" r="160" fill="url(#s7-spot)"/>
+            <!-- ROPES from outer to mid octagon -->
+            <g stroke="rgba(255,255,255,0.22)" stroke-width="1">
+              <line x1="269" y1="34" x2="253.6" y2="70.6"/>
+              <line x1="366" y1="131" x2="329.4" y2="146.4"/>
+              <line x1="366" y1="269" x2="329.4" y2="253.6"/>
+              <line x1="269" y1="366" x2="253.6" y2="329.4"/>
+              <line x1="131" y1="366" x2="146.4" y2="329.4"/>
+              <line x1="34" y1="269" x2="70.6" y2="253.6"/>
+              <line x1="34" y1="131" x2="70.6" y2="146.4"/>
+              <line x1="131" y1="34" x2="146.4" y2="70.6"/>
+            </g>
+            <!-- OCTAGONS: outer / mid / inner stage -->
+            <polygon points="269,34 366,131 366,269 269,366 131,366 34,269 34,131 131,34"
+                     fill="none" stroke="rgba(235,28,36,0.85)" stroke-width="2.2"
+                     style="filter:drop-shadow(0 0 12px rgba(235,28,36,0.6));"/>
+            <polygon points="253.6,70.6 329.4,146.4 329.4,253.6 253.6,329.4 146.4,329.4 70.6,253.6 70.6,146.4 146.4,70.6"
+                     fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
+            <polygon points="234.4,116.8 283.2,165.5 283.2,234.5 234.4,283.2 165.6,283.2 116.8,234.5 116.8,165.5 165.6,116.8"
+                     fill="rgba(235,28,36,0.06)" stroke="rgba(255,255,255,0.42)" stroke-width="1.4"
+                     stroke-dasharray="3 3"/>
+            <!-- corner dots (red corners + neutral) -->
+            <g>
+              <circle cx="269" cy="34" r="5" fill="#eb1c24" style="filter:drop-shadow(0 0 8px rgba(235,28,36,0.9));"/>
+              <circle cx="269" cy="366" r="5" fill="#eb1c24" style="filter:drop-shadow(0 0 8px rgba(235,28,36,0.9));"/>
+              <circle cx="131" cy="34" r="5" fill="#5a8bff" style="filter:drop-shadow(0 0 6px rgba(90,139,255,0.8));"/>
+              <circle cx="131" cy="366" r="5" fill="#5a8bff" style="filter:drop-shadow(0 0 6px rgba(90,139,255,0.8));"/>
+              <circle cx="366" cy="131" r="3" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="366" cy="269" r="3" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="34" cy="131" r="3" fill="rgba(255,255,255,0.6)"/>
+              <circle cx="34" cy="269" r="3" fill="rgba(255,255,255,0.6)"/>
+            </g>
+            <!-- crosshairs through center -->
+            <g stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="2 4">
+              <line x1="200" y1="116.8" x2="200" y2="283.2"/>
+              <line x1="116.8" y1="200" x2="283.2" y2="200"/>
+            </g>
+          </svg>
+
+          <div class="center-block">
+            <span class="lab">// center stage</span>
+            <span class="deg">RING</span>
+            <span class="sub">octagon · 360° · live</span>
+          </div>
+        </div>
+        <div class="ring-meta">
+          <div class="cell"><span class="l">// rounds</span><span class="v"><em>3</em>&nbsp;БЛОКА</span></div>
+          <div class="cell"><span class="l">// total</span><span class="v">44 acts</span></div>
+          <div class="cell"><span class="l">// pov</span><span class="v">360°</span></div>
+          <div class="cell"><span class="l">// time</span><span class="v">22→06</span></div>
         </div>
       </div>
 
-      <div class="lineup-section artists-block">
-        <div class="section-label"><span class="lab">// artists</span><span class="num">24 / 44</span></div>
-        <div class="grid-artists">
-          <div class="artist"><span class="name">ARSUL</span><span class="num">09</span></div>
-          <div class="artist long"><span class="name">Грустная<br>Тусовщица</span><span class="num">10</span></div>
-          <div class="artist"><span class="name">KEYNASTY</span><span class="num">11</span></div>
-          <div class="artist"><span class="name">Eroiera</span><span class="num">12</span></div>
-          <div class="artist"><span class="name">Metox</span><span class="num">13</span></div>
-          <div class="artist"><span class="name">ASHY 43</span><span class="num">14</span></div>
-          <div class="artist"><span class="name">G4OUR</span><span class="num">15</span></div>
-          <div class="artist"><span class="name">RVMZES</span><span class="num">16</span></div>
-          <div class="artist"><span class="name">ARITA</span><span class="num">17</span></div>
-          <div class="artist long"><span class="name">DIMA<br>URIH</span><span class="num">18</span></div>
-          <div class="artist"><span class="name">ROXXI</span><span class="num">19</span></div>
-          <div class="artist xlong"><span class="name">ZAUR&amp;<br>MEIRINKITO</span><span class="num">20</span></div>
-          <div class="artist"><span class="name">ARINTU</span><span class="num">21</span></div>
-          <div class="artist long"><span class="name">CHERNO-<br>SHEY</span><span class="num">22</span></div>
-          <div class="artist long"><span class="name">Игнатий<br>Винтуров</span><span class="num">23</span></div>
-          <div class="artist"><span class="name">FLOCKAA</span><span class="num">24</span></div>
-          <div class="artist long"><span class="name">LUVDA-<br>KASH</span><span class="num">25</span></div>
-          <div class="artist"><span class="name">SUDEAL</span><span class="num">26</span></div>
-          <div class="artist xlong"><span class="name">КИСЛО-<br>СЛАДКИЙ<br>с&nbsp;БОНА</span><span class="num">27</span></div>
-          <div class="artist"><span class="name">EKHO017</span><span class="num">28</span></div>
-          <div class="artist"><span class="name">LYAPO</span><span class="num">29</span></div>
-          <div class="artist"><span class="name">APRIEL</span><span class="num">30</span></div>
-          <div class="artist"><span class="name">BLINK</span><span class="num">31</span></div>
-          <div class="artist long"><span class="name">MOLODOI<br>VLADIMIR</span><span class="num">32</span></div>
+      <!-- FIGHT CARDS -->
+      <div class="cards">
+        <!-- ROUND 1 — MAIN EVENT -->
+        <div class="fight-card main-event">
+          <div class="round-tag">
+            <span class="r-num">R&nbsp;01</span>
+            <span class="r-name">main event · headliners</span>
+            <span class="r-bell">●</span>
+            <span class="r-count">8 / 44</span>
+          </div>
+          <div class="roster">
+            <div class="act"><span class="role">title · live</span><span class="name">Жак<br>Энтони</span><span class="num">01</span></div>
+            <div class="act"><span class="role">title · live</span><span class="name">Благо<br>Вайт</span><span class="num">02</span></div>
+            <div class="act"><span class="role">title · r&amp;b</span><span class="name">Кристина<br>Си</span><span class="num">03</span></div>
+            <div class="act"><span class="role">title · hip-hop</span><span class="name">Гафур</span><span class="num">04</span></div>
+            <div class="act"><span class="role">title · pop</span><span class="name">ANDRO</span><span class="num">05</span></div>
+            <div class="act"><span class="role">title · pop</span><span class="name">Адель</span><span class="num">06</span></div>
+            <div class="act"><span class="role">title · alt</span><span class="name">Биовульф</span><span class="num">07</span></div>
+            <div class="act"><span class="role">title · hip-hop</span><span class="name">DONI</span><span class="num">08</span></div>
+          </div>
         </div>
-      </div>
 
-      <div class="lineup-section djs-block">
-        <div class="section-label"><span class="lab">// dj</span><span class="num">12 / 44</span></div>
-        <div class="grid-djs">
-          <div class="artist"><span class="name">KIIDA</span><span class="num">33</span></div>
-          <div class="artist long"><span class="name">STAS<br>SATORI</span><span class="num">34</span></div>
-          <div class="artist long"><span class="name">RUSLAN<br>FYUCHA</span><span class="num">35</span></div>
-          <div class="artist long"><span class="name">PRETTY<br>VARDI</span><span class="num">36</span></div>
-          <div class="artist long"><span class="name">SAYNO-<br>MOCUZ</span><span class="num">37</span></div>
-          <div class="artist long"><span class="name">Яна<br>Индигарка</span><span class="num">38</span></div>
-          <div class="artist long"><span class="name">ANNA<br>DARK</span><span class="num">39</span></div>
-          <div class="artist"><span class="name">PTICHKA</span><span class="num">40</span></div>
-          <div class="artist"><span class="name">SHABA</span><span class="num">41</span></div>
-          <div class="artist"><span class="name">EZZA</span><span class="num">42</span></div>
-          <div class="artist"><span class="name">HAMZEY</span><span class="num">43</span></div>
-          <div class="artist long"><span class="name">MARI<br>KRASSO</span><span class="num">44</span></div>
+        <!-- ROUND 2 — UNDERCARD -->
+        <div class="fight-card undercard">
+          <div class="round-tag">
+            <span class="r-num">R&nbsp;02</span>
+            <span class="r-name">undercard · artists</span>
+            <span class="r-count">24 / 44</span>
+          </div>
+          <div class="roster">
+            <div class="act"><span class="name">ARSUL</span><span class="num">09</span></div>
+            <div class="act long"><span class="name">Грустная<br>Тусовщица</span><span class="num">10</span></div>
+            <div class="act"><span class="name">KEYNASTY</span><span class="num">11</span></div>
+            <div class="act"><span class="name">Eroiera</span><span class="num">12</span></div>
+            <div class="act"><span class="name">Metox</span><span class="num">13</span></div>
+            <div class="act"><span class="name">ASHY 43</span><span class="num">14</span></div>
+            <div class="act"><span class="name">G4OUR</span><span class="num">15</span></div>
+            <div class="act"><span class="name">RVMZES</span><span class="num">16</span></div>
+            <div class="act"><span class="name">ARITA</span><span class="num">17</span></div>
+            <div class="act long"><span class="name">DIMA<br>URIH</span><span class="num">18</span></div>
+            <div class="act"><span class="name">ROXXI</span><span class="num">19</span></div>
+            <div class="act xlong"><span class="name">ZAUR&amp;<br>MEIRINKITO</span><span class="num">20</span></div>
+            <div class="act"><span class="name">ARINTU</span><span class="num">21</span></div>
+            <div class="act long"><span class="name">CHERNO-<br>SHEY</span><span class="num">22</span></div>
+            <div class="act long"><span class="name">Игнатий<br>Винтуров</span><span class="num">23</span></div>
+            <div class="act"><span class="name">FLOCKAA</span><span class="num">24</span></div>
+            <div class="act long"><span class="name">LUVDA-<br>KASH</span><span class="num">25</span></div>
+            <div class="act"><span class="name">SUDEAL</span><span class="num">26</span></div>
+            <div class="act xlong"><span class="name">КИСЛО-<br>СЛАДКИЙ<br>с&nbsp;БОНА</span><span class="num">27</span></div>
+            <div class="act"><span class="name">EKHO017</span><span class="num">28</span></div>
+            <div class="act"><span class="name">LYAPO</span><span class="num">29</span></div>
+            <div class="act"><span class="name">APRIEL</span><span class="num">30</span></div>
+            <div class="act"><span class="name">BLINK</span><span class="num">31</span></div>
+            <div class="act long"><span class="name">MOLODOI<br>VLADIMIR</span><span class="num">32</span></div>
+          </div>
+        </div>
+
+        <!-- ROUND 3 — DJ ROOM -->
+        <div class="fight-card dj-room">
+          <div class="round-tag">
+            <span class="r-num">R&nbsp;03</span>
+            <span class="r-name">dj room · electronica</span>
+            <span class="r-count">12 / 44</span>
+          </div>
+          <div class="roster">
+            <div class="act"><span class="name">KIIDA</span><span class="num">33</span></div>
+            <div class="act long"><span class="name">STAS<br>SATORI</span><span class="num">34</span></div>
+            <div class="act long"><span class="name">RUSLAN<br>FYUCHA</span><span class="num">35</span></div>
+            <div class="act long"><span class="name">PRETTY<br>VARDI</span><span class="num">36</span></div>
+            <div class="act long"><span class="name">SAYNO-<br>MOCUZ</span><span class="num">37</span></div>
+            <div class="act long"><span class="name">Яна<br>Индигарка</span><span class="num">38</span></div>
+            <div class="act long"><span class="name">ANNA<br>DARK</span><span class="num">39</span></div>
+            <div class="act"><span class="name">PTICHKA</span><span class="num">40</span></div>
+            <div class="act"><span class="name">SHABA</span><span class="num">41</span></div>
+            <div class="act"><span class="name">EZZA</span><span class="num">42</span></div>
+            <div class="act"><span class="name">HAMZEY</span><span class="num">43</span></div>
+            <div class="act long"><span class="name">MARI<br>KRASSO</span><span class="num">44</span></div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="footnote">
-      <span><em>+</em> кураторские блоки · special guests · secret line</span>
-      <span>44 acts · line-up subject to change · 2026.06.06</span>
+      <span><em>+</em> special guests · secret line · кураторские блоки</span>
+      <span>3 rounds · 44 acts · 1 night · 06.06.26</span>
     </div>
   </div>
 
   <div class="chrome-bot">
-    <span>jakentony · blago white · christina si · gafur · andro · adel · biovulf · doni · +24 artists · +12 djs</span>
-    <span>music line · v2</span>
+    <span>ring · main event · undercard · dj room · 360° · live</span>
+    <span>arena · v3</span>
   </div>
 </section>
 
