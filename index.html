@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8" />
-<title>STAK × BADCLUB × SILICONE · STAK DAY · 06.06.2026</title>
+<title>STAK × BADCLUB · STAK DAY · 06.06.2026</title>
 <meta name="viewport" content="width=1920">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -870,6 +870,173 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 .s6 .ghost{position:absolute;left:-2%;top:38%;font-family:"Unbounded",sans-serif;font-weight:900;font-size:560px;letter-spacing:-.09em;color:rgba(14,13,11,.04);text-transform:uppercase;line-height:.84;pointer-events:none;}
 
 /* ═════════════════════════════════════════════════════
+   SLIDE 7 — PRE-EVENT · ДВОР 90Х (traffic engine)
+   ═════════════════════════════════════════════════════ */
+.s-dvor{background:#0a0a0c;color:#fff;}
+.s-dvor .stage-bg{position:absolute;inset:0;background:
+  radial-gradient(circle at 18% 30%,rgba(235,28,36,.40),transparent 40%),
+  radial-gradient(circle at 82% 78%,rgba(255,144,72,.26),transparent 46%),
+  linear-gradient(180deg,#0d0d11,#06060a);}
+.s-dvor .ghost{position:absolute;left:-3%;bottom:-12%;font-family:"Unbounded",sans-serif;font-weight:900;font-size:520px;letter-spacing:-.09em;color:rgba(255,255,255,.035);text-transform:uppercase;line-height:.84;pointer-events:none;}
+.s-dvor .body{position:absolute;inset:80px 72px 60px 72px;display:flex;flex-direction:column;gap:18px;}
+
+/* HEAD */
+.s-dvor .head{display:flex;justify-content:space-between;align-items:flex-start;gap:36px;}
+.s-dvor .head-left{display:flex;flex-direction:column;gap:14px;flex:1;min-width:0;}
+.s-dvor .pre-tag{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;font-weight:700;
+  background:var(--signal);color:#fff;padding:9px 16px 8px;
+  box-shadow:0 14px 30px -8px rgba(235,28,36,.55);}
+.s-dvor .pre-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;
+  box-shadow:0 0 0 3px rgba(255,255,255,.18);animation:dvorpulse 1.6s infinite;}
+@keyframes dvorpulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.45;transform:scale(.8);}}
+.s-dvor .title-row{display:flex;align-items:flex-end;gap:24px;}
+.s-dvor h2{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:120px;line-height:.84;
+  letter-spacing:-.075em;text-transform:uppercase;color:#fff;
+  text-shadow:2px 2px 0 var(--signal),4px 4px 0 rgba(0,0,0,.5),0 32px 80px rgba(235,28,36,.32);
+}
+.s-dvor h2 em{font-style:normal;color:var(--signal);
+  text-shadow:2px 2px 0 #000,0 0 36px rgba(235,28,36,.55),0 32px 80px rgba(235,28,36,.4);}
+.s-dvor .by-cred{display:flex;flex-direction:column;gap:4px;padding-bottom:8px;border-left:1px solid rgba(255,255,255,.18);padding-left:16px;}
+.s-dvor .by-cred .l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;}
+.s-dvor .by-cred .v{font-family:"Unbounded",sans-serif;font-weight:700;font-size:18px;letter-spacing:-.02em;text-transform:uppercase;color:#fff;line-height:1;}
+.s-dvor .by-cred .v em{font-style:normal;color:var(--orange);}
+.s-dvor .sub{font-family:"Unbounded",sans-serif;font-weight:600;font-size:18px;letter-spacing:-.02em;text-transform:uppercase;color:rgba(255,255,255,.92);line-height:1.15;max-width:1100px;}
+.s-dvor .sub em{font-style:normal;color:var(--orange);}
+.s-dvor .head-right{display:flex;flex-direction:column;gap:8px;align-items:flex-end;text-align:right;padding-top:4px;}
+.s-dvor .head-right .vs-block{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:42px;line-height:.9;
+  letter-spacing:-.04em;color:#fff;text-transform:uppercase;
+  text-shadow:0 0 24px rgba(255,144,72,.4),0 22px 48px rgba(0,0,0,.45);
+}
+.s-dvor .head-right .vs-block em{font-style:normal;color:var(--orange);font-size:.7em;vertical-align:.05em;}
+.s-dvor .head-right .l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+
+/* MAIN ROW — hero + side panel */
+.s-dvor .main{display:grid;grid-template-columns:1.55fr 1fr;gap:20px;flex:1;min-height:0;}
+
+/* HERO photo — left */
+.s-dvor .hero{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);
+  background:#0a0a0c;
+  display:flex;flex-direction:column;
+  clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,0 100%);
+}
+.s-dvor .hero .img-wrap{position:relative;flex:1;min-height:0;overflow:hidden;}
+.s-dvor .hero .img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 38%;display:block;
+  filter:contrast(1.08) saturate(1.05) brightness(.96);}
+.s-dvor .hero .img-wrap::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(8,8,12,.0) 50%,rgba(8,8,12,.85) 100%),
+             linear-gradient(90deg,rgba(8,8,12,.5),transparent 30%);
+  pointer-events:none;}
+.s-dvor .hero .stamp-tl{position:absolute;left:18px;top:18px;z-index:2;
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--signal);color:#fff;padding:7px 12px 6px;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;font-weight:700;text-transform:uppercase;
+  box-shadow:0 10px 24px -6px rgba(235,28,36,.55);}
+.s-dvor .hero .stamp-tl::before{content:"";width:6px;height:6px;background:#fff;border-radius:50%;}
+.s-dvor .hero .stamp-tr{position:absolute;right:18px;top:18px;z-index:2;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;font-weight:700;text-transform:uppercase;
+  background:rgba(8,8,12,.7);border:1px solid rgba(255,255,255,.22);
+  color:#fff;padding:7px 12px 6px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.s-dvor .hero .ovr{position:absolute;left:24px;right:24px;bottom:22px;z-index:2;
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;}
+.s-dvor .hero .ovr .ttl{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:46px;line-height:.9;
+  letter-spacing:-.045em;text-transform:uppercase;color:#fff;
+  text-shadow:0 12px 32px rgba(0,0,0,.55);
+}
+.s-dvor .hero .ovr .ttl em{font-style:normal;color:var(--orange);}
+.s-dvor .hero .ovr .ttl-l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:600;display:block;margin-bottom:6px;}
+.s-dvor .hero .ovr .meta{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.65);text-align:right;line-height:1.6;font-weight:600;flex-shrink:0;}
+
+/* SIDE — numbers + lineup tile */
+.s-dvor .side{display:flex;flex-direction:column;gap:14px;min-height:0;}
+.s-dvor .num-card{
+  position:relative;border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  padding:18px 22px;display:flex;flex-direction:column;gap:4px;
+}
+.s-dvor .num-card.hot{
+  border-color:rgba(235,28,36,.5);
+  background:linear-gradient(160deg,rgba(235,28,36,.18),rgba(235,28,36,.02) 70%);
+  box-shadow:0 26px 60px -22px rgba(235,28,36,.55),inset 0 1px 0 rgba(255,255,255,.06);
+}
+.s-dvor .num-card .l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;}
+.s-dvor .num-card .v{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:80px;line-height:.86;
+  letter-spacing:-.06em;color:#fff;
+}
+.s-dvor .num-card.hot .v{color:#fff;text-shadow:0 0 22px rgba(235,28,36,.45),0 22px 50px rgba(235,28,36,.4);}
+.s-dvor .num-card .v em{font-style:normal;font-size:.55em;color:var(--orange);vertical-align:.06em;margin-left:.05em;}
+.s-dvor .num-card .v sup{font-size:.3em;font-weight:700;color:rgba(255,255,255,.65);letter-spacing:.18em;text-transform:uppercase;margin-left:.08em;vertical-align:top;}
+.s-dvor .num-card .desc{font-size:12px;line-height:1.5;color:rgba(255,255,255,.7);}
+.s-dvor .num-card .desc strong{color:#fff;font-weight:600;}
+
+.s-dvor .lineup{
+  position:relative;flex:1;min-height:0;overflow:hidden;
+  border:1px solid rgba(255,255,255,.14);background:#0a0a0c;
+}
+.s-dvor .lineup img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;filter:contrast(1.08) saturate(1.05) brightness(.94);}
+.s-dvor .lineup::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,8,12,.85));pointer-events:none;}
+.s-dvor .lineup .stamp{position:absolute;left:14px;top:14px;z-index:2;
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;font-weight:700;text-transform:uppercase;
+  background:rgba(8,8,12,.7);border:1px solid rgba(255,255,255,.22);
+  color:#fff;padding:6px 10px 5px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+.s-dvor .lineup .cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;
+  font-family:"Unbounded",sans-serif;font-weight:700;font-size:14px;letter-spacing:-.02em;text-transform:uppercase;color:#fff;line-height:1.1;}
+.s-dvor .lineup .cap em{font-style:normal;color:var(--orange);}
+
+/* RULES strip — horizontal */
+.s-dvor .rules{
+  display:flex;align-items:stretch;gap:10px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(180deg,rgba(20,20,26,.72),rgba(8,8,12,.94));
+  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,0 100%);
+}
+.s-dvor .rules-ttl{display:flex;flex-direction:column;justify-content:center;gap:4px;padding:0 16px 0 12px;border-right:1px solid rgba(255,255,255,.12);min-width:200px;}
+.s-dvor .rules-ttl .l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;}
+.s-dvor .rules-ttl .v{font-family:"Unbounded",sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em;text-transform:uppercase;color:#fff;line-height:.95;}
+.s-dvor .rules-ttl .v em{font-style:normal;color:var(--signal);}
+.s-dvor .rules-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;flex:1;}
+.s-dvor .rule{
+  position:relative;border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.04);padding:12px 14px;
+  display:flex;align-items:center;gap:14px;
+}
+.s-dvor .rule.score{border-color:rgba(235,28,36,.42);background:linear-gradient(170deg,rgba(235,28,36,.16),rgba(235,28,36,.04));}
+.s-dvor .rule.fight{border-color:rgba(255,144,72,.4);background:linear-gradient(170deg,rgba(255,144,72,.14),rgba(255,144,72,.03));}
+.s-dvor .rule.coward{border-color:rgba(255,255,255,.22);}
+.s-dvor .rule .delta{
+  font-family:"Unbounded",sans-serif;font-weight:900;font-size:32px;letter-spacing:-.04em;line-height:1;
+  flex-shrink:0;min-width:64px;
+}
+.s-dvor .rule.score .delta{color:var(--signal);text-shadow:0 0 16px rgba(235,28,36,.5);}
+.s-dvor .rule.fight .delta{color:var(--orange);text-shadow:0 0 16px rgba(255,144,72,.5);}
+.s-dvor .rule.coward .delta{color:#fff;}
+.s-dvor .rule .body-r{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.s-dvor .rule .num{font-family:"IBM Plex Mono",monospace;font-size:9px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600;}
+.s-dvor .rule .name{font-family:"Unbounded",sans-serif;font-weight:700;font-size:13px;letter-spacing:-.02em;text-transform:uppercase;color:#fff;line-height:1.1;}
+
+/* CHANNELS strip — bottom */
+.s-dvor .strip{
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:10px 0 0;
+}
+.s-dvor .strip .l{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:700;}
+.s-dvor .strip .pills{display:flex;gap:6px;flex-wrap:wrap;}
+.s-dvor .strip .pills span{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;
+  border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);
+  color:rgba(255,255,255,.85);padding:6px 10px;
+}
+.s-dvor .strip .pills span.live{background:var(--signal);border-color:transparent;color:#fff;}
+
+/* ═════════════════════════════════════════════════════
    SLIDE 7 — ARENA / RING NIGHT
    ═════════════════════════════════════════════════════ */
 .s7{background:#0a0a0c;color:#fff;}
@@ -1117,6 +1284,8 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 }
 .s8 .channels .pills span.live{background:var(--signal);border-color:transparent;
   box-shadow:0 8px 20px -6px rgba(235,28,36,.6);}
+.s8 .channels .pills span.hot{background:linear-gradient(90deg,var(--orange),var(--signal));border-color:transparent;color:#fff;
+  box-shadow:0 8px 20px -6px rgba(255,144,72,.55);}
 
 /* ═════════════════════════════════════════════════════
    SLIDE 9 — INTEGRATIONS
@@ -1342,7 +1511,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>file · 001 · stak × badclub × silicone</span>
+    <span>file · 001 · stak × badclub</span>
     <span>06.06.2026 · moscow · ru</span>
   </div>
 
@@ -1354,23 +1523,23 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
       </div>
       <div class="top-meta">
         <span class="mono" style="color:rgba(255,255,255,.55);">performance · drop · scene · art</span>
-        <span class="mono" style="color:rgba(255,255,255,.55);">hosted by stak.tusa · badclub · silicone</span>
+        <span class="mono" style="color:rgba(255,255,255,.55);">hosted by stak.tusa · badclub</span>
       </div>
     </div>
 
     <div>
-      <h1 class="title">STAK<span class="x">×</span><em>BADCLUB</em><br><span class="x">×</span><span class="silicone">SILICONE</span></h1>
+      <h1 class="title">STAK<span class="x">×</span><em>BADCLUB</em></h1>
       <div class="logo-trio">
         <span class="triad"><span class="dot"></span><b>STAK.TUSA</b><span style="opacity:.55;">community / culture</span></span>
         <span class="triad"><span class="dot"></span><b>BAD CLUB</b><span style="opacity:.55;">scene / drop</span></span>
-        <span class="triad"><span class="dot"></span><b>SILICONE</b><span style="opacity:.55;">venue / sound</span></span>
+        <span class="triad"><span class="dot"></span><b>SEASON&nbsp;OPEN</b><span style="opacity:.55;">06.06 / flakon</span></span>
       </div>
     </div>
 
     <div class="lead">
       <div class="lead-left">
         <h2><em>STAK DAY</em> — открытие лета.<br>самая мощная точка входа в&nbsp;новый сезон.</h2>
-        <p>STAK&nbsp;×&nbsp;BADCLUB&nbsp;×&nbsp;SILICONE собирают в одном пространстве музыку, моду, уличную культуру и современное искусство. Каждый гость становится частью происходящего — а&nbsp;не зрителем за&nbsp;бортом.</p>
+        <p>STAK&nbsp;×&nbsp;BADCLUB собирают в одном пространстве музыку, моду, уличную культуру и современное искусство. Каждый гость становится частью происходящего — а&nbsp;не зрителем за&nbsp;бортом.</p>
       </div>
       <div class="lead-meta">
         <span class="where">дизайн завод флакон · москва</span>
@@ -1381,7 +1550,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   </div>
 
   <div class="red-bar">
-    <span>STAK × BADCLUB × SILICONE</span><span>SEASON OPEN · 06.06.2026</span><span>FLAKON · MOSCOW</span><span>ART · STREET · SOUND · DROP</span><span>NOT A PARTY · AN EXPERIENCE</span>
+    <span>STAK × BADCLUB</span><span>SEASON OPEN · 06.06.2026</span><span>FLAKON · MOSCOW</span><span>ART · STREET · SOUND · DROP</span><span>NOT A PARTY · AN EXPERIENCE</span>
   </div>
 </section>
 
@@ -1397,7 +1566,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>02 / 11 · concept</span>
+    <span>02 / 12 · concept</span>
     <span>scene system · v1</span>
   </div>
 
@@ -1426,10 +1595,10 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
         <li>Перформансы и&nbsp;контесты</li>
       </ul>
       <div class="stats">
-        <div class="cell"><div class="v">2<em>000</em>+</div><div class="l">гостей</div></div>
+        <div class="cell"><div class="v">3<em>000</em>+</div><div class="l">гостей</div></div>
         <div class="cell"><div class="v">16+</div><div class="l">активных зон</div></div>
         <div class="cell"><div class="v">44</div><div class="l">артистов · dj</div></div>
-        <div class="cell"><div class="v">∞</div><div class="l">программа · live</div></div>
+        <div class="cell"><div class="v">22→06</div><div class="l">час · нон-стоп</div></div>
       </div>
     </div>
   </div>
@@ -1455,7 +1624,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>03 / 11 · format</span>
+    <span>03 / 12 · format</span>
     <span>city in city · multi-format</span>
   </div>
 
@@ -1541,7 +1710,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   </div>
 
   <div class="ticker">
-    <span><em>///</em> sound</span><span><em>///</em> drip</span><span><em>///</em> street</span><span><em>///</em> art</span><span><em>///</em> show</span><span><em>///</em> immersive</span><span><em>///</em> stak × badclub × silicone</span>
+    <span><em>///</em> sound</span><span><em>///</em> drip</span><span><em>///</em> street</span><span><em>///</em> art</span><span><em>///</em> show</span><span><em>///</em> immersive</span><span><em>///</em> stak × badclub</span>
   </div>
 </section>
 
@@ -1556,7 +1725,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>04 / 11 · venue</span>
+    <span>04 / 12 · venue</span>
     <span>design plant flakon · moscow</span>
   </div>
 
@@ -1615,8 +1784,8 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   </div>
 
   <div class="chrome-bot">
-    <span>1-я тверская-ямская · 2026</span>
-    <span>capacity · 2000+ guests</span>
+    <span>дизайн завод флакон · москва · 2026</span>
+    <span>capacity · 3 000+ guests</span>
   </div>
 </section>
 
@@ -1634,7 +1803,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>05 / 11 · audience</span>
+    <span>05 / 12 · audience</span>
     <span>culture makers · 18-45</span>
   </div>
 
@@ -1708,7 +1877,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>06 / 11 · space</span>
+    <span>06 / 12 · space</span>
     <span>city in city · 7 zones</span>
   </div>
 
@@ -1804,7 +1973,129 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
   </div>
 </section>
 
-<!-- ═════════════ SLIDE 7 — ARTISTS ═════════════ -->
+<!-- ═════════════ SLIDE 7 — PRE-EVENT · ДВОР 90Х ═════════════ -->
+<section class="slide s-dvor chrome-dark">
+  <div class="stage-bg"></div>
+  <div class="lens-flare tl"></div>
+  <div class="lens-flare br orange"></div>
+  <div class="glow-orb red" style="left:-10%;top:-12%;width:540px;height:540px;"></div>
+  <div class="glow-orb orange" style="right:-12%;bottom:-10%;width:520px;height:520px;"></div>
+  <div class="light-beam"></div>
+  <div class="light-beam red"></div>
+  <div class="dot-grid"></div>
+  <div class="dot-overlay"></div>
+  <div class="noise"></div>
+  <div class="edge-vignette"></div>
+  <div class="ghost">DVOR<br>90X</div>
+
+  <div class="chrome-top">
+    <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
+    <span>07 / 12 · pre-event</span>
+    <span>traffic engine · влияние · хайп</span>
+  </div>
+
+  <div class="body">
+    <div class="head">
+      <div class="head-left">
+        <span class="pre-tag">pre-event · traffic engine · 07</span>
+        <div class="title-row">
+          <h2>ДВОР&nbsp;<em>90Х</em></h2>
+          <div class="by-cred">
+            <span class="l">// шоу</span>
+            <span class="v"><em>футбол</em>&nbsp;×&nbsp;<em>бои</em></span>
+            <span class="l">новый вид спорта</span>
+          </div>
+        </div>
+        <div class="sub">Перед STAK&nbsp;DAY проходит <em>трафикообразующее инфлюенс-мероприятие</em> — медийные команды состязаются в&nbsp;новом виде спорта.</div>
+      </div>
+      <div class="head-right">
+        <span class="l">// промоушен</span>
+        <span class="vs-block">@DVOR<em>90X</em></span>
+        <span class="l">youtube · telegram · instagram</span>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="hero">
+        <span class="stamp-tl">● версус-формат</span>
+        <span class="stamp-tr">live · principle</span>
+        <div class="img-wrap">
+          <img src="images/dvor/hero-vs.jpg" alt="рэперы vs блогеры — версус формат игры Двор 90х"/>
+        </div>
+        <div class="ovr">
+          <div>
+            <span class="ttl-l">главная интрига</span>
+            <div class="ttl">Рэперы&nbsp;<em>vs</em>&nbsp;Блогеры.<br>Стримеры&nbsp;<em>vs</em>&nbsp;Спортсмены.</div>
+          </div>
+          <div class="meta">олимпийские чемпионы<br>vs уличные парни<br>· каждый идёт до&nbsp;конца</div>
+        </div>
+      </div>
+
+      <div class="side">
+        <div class="num-card hot">
+          <span class="l">// нарезки · shorts · reels</span>
+          <span class="v">20<em>M</em><sup>+</sup></span>
+          <span class="desc"><strong>До&nbsp;20&nbsp;млн</strong> на&nbsp;нарезках матча — TikTok / Reels / Shorts.</span>
+        </div>
+        <div class="num-card">
+          <span class="l">// полный выпуск</span>
+          <span class="v">400<em>K</em><sup>+</sup></span>
+          <span class="desc"><strong>До&nbsp;400&nbsp;тыс.</strong> на&nbsp;каждом выпуске YouTube/VK.</span>
+        </div>
+        <div class="lineup">
+          <span class="stamp">инфлюенсеры проекта</span>
+          <img src="images/dvor/lineup.jpg" alt="инфлюенсеры проекта Двор 90х: TSAR_65, Khamzat_Kosmos, Тимур Никулин, Edward Bil, Егор Шип и др."/>
+          <div class="cap">12+ топ-инфлюенсеров &amp;&nbsp;<em>звёздных команд</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rules">
+      <div class="rules-ttl">
+        <span class="l">// правила</span>
+        <span class="v">Одни&nbsp;<em>на&nbsp;двоих.</em></span>
+      </div>
+      <div class="rules-list">
+        <div class="rule score">
+          <span class="delta">+1</span>
+          <div class="body-r">
+            <span class="num">01 / гол</span>
+            <span class="name">Один гол —<br>одно очко</span>
+          </div>
+        </div>
+        <div class="rule fight">
+          <span class="delta">+1</span>
+          <div class="body-r">
+            <span class="num">02 / схватка</span>
+            <span class="name">Победа в&nbsp;драке —<br>+1 очко</span>
+          </div>
+        </div>
+        <div class="rule coward">
+          <span class="delta">−2</span>
+          <div class="body-r">
+            <span class="num">03 / отказ</span>
+            <span class="name">Дал заднюю —<br>минус два очка</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <span class="l">media teams</span>
+      <div class="pills">
+        <span>блогеры</span><span>рэперы</span><span>стримеры</span><span>спортсмены</span><span>чемпионы-комментаторы</span><span>звёздные гости</span>
+        <span class="live">● viral content</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="chrome-bot">
+    <span>дворовый футбол × медийные бои · хайп перед STAK DAY</span>
+    <span>traffic engine · v1</span>
+  </div>
+</section>
+
+<!-- ═════════════ SLIDE 8 — ARENA / RING NIGHT ═════════════ -->
 <section class="slide s7 chrome-dark">
   <div class="stage-bg"></div>
   <div class="lens-flare center soft"></div>
@@ -1818,7 +2109,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>07 / 11 · arena</span>
+    <span>08 / 12 · arena</span>
     <span>octagon · 360° · 44 acts</span>
   </div>
 
@@ -2061,14 +2352,14 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>08 / 11 · numbers</span>
+    <span>09 / 12 · numbers</span>
     <span>scale · reach · ugc</span>
   </div>
 
   <div class="body">
     <div class="head">
       <div>
-        <span class="editorial-label">Метрики · 08</span>
+        <span class="editorial-label">Метрики · 09</span>
         <h2>Цифры,<br>которые&nbsp;<em>работают.</em></h2>
       </div>
       <div class="meta">live · охват · контент<br>платформа · билеты · мерч · контент</div>
@@ -2104,15 +2395,15 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
     <div class="channels">
       <span class="l">channels</span>
       <div class="pills">
-        <span>instagram</span><span>telegram</span><span>VK</span><span>youtube</span><span>digital · ooh</span><span>influencers</span><span>press</span>
+        <span>instagram</span><span>telegram</span><span>VK</span><span>youtube</span><span>digital · ooh</span><span>influencers</span><span>press</span><span class="hot">+ ДВОР 90Х · 20M views</span>
       </div>
       <span class="pills"><span class="live">● live · 06.06.26</span></span>
     </div>
   </div>
 
   <div class="chrome-bot">
-    <span>3 000+ on-site · 5M+ reach · 10M+ ugc</span>
-    <span>STAK × BADCLUB × SILICONE · 2026</span>
+    <span>3 000+ on-site · 5M+ reach · 10M+ ugc · pre-event 20M+</span>
+    <span>STAK × BADCLUB · 2026</span>
   </div>
 </section>
 
@@ -2131,14 +2422,14 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>09 / 11 · integrations</span>
+    <span>10 / 12 · integrations</span>
     <span>brand inside the experience</span>
   </div>
 
   <div class="body">
     <div class="col-l">
       <div>
-        <span class="editorial-label dark">Интеграции · 09</span>
+        <span class="editorial-label dark">Интеграции · 10</span>
         <h2>Бренд<br>становится<br>частью&nbsp;<em>опыта.</em></h2>
         <p class="lead">Не «логотип на баннере», а живая роль внутри сценария. <strong>Партнёр получает свой ритуал и&nbsp;контентный поток</strong> — собственная сцена, активация или&nbsp;зона со&nbsp;своим характером.</p>
       </div>
@@ -2190,13 +2481,13 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>10 / 11 · art &amp; experience</span>
+    <span>11 / 12 · art &amp; experience</span>
     <span>culture statement</span>
   </div>
 
   <div class="body">
     <div class="col-l">
-      <span class="accent">усиление · 10</span>
+      <span class="accent">усиление · 11</span>
       <h2>Искусство —<br><em>часть среды.</em></h2>
       <ul>
         <li>Выставки картин и&nbsp;графики</li>
@@ -2230,7 +2521,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-bot">
     <span>art · sculpt · paint · culture · statement</span>
-    <span>10 / 11 · v1</span>
+    <span>11 / 12 · v1</span>
   </div>
 </section>
 
@@ -2256,13 +2547,13 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
 
   <div class="chrome-top">
     <div class="chrome-mark"><span class="stak"><img src="images/logo stak.svg" alt="STAK"/></span><span class="tail">.tusa<span class="x">×</span><span class="partner">badclub</span></span></div>
-    <span>11 / 11 · why it matters</span>
+    <span>12 / 12 · why it matters</span>
     <span>not a party · an experience</span>
   </div>
 
   <div class="body">
     <div class="top">
-      <span class="editorial-label dark">Финальный кадр · 11</span>
+      <span class="editorial-label dark">Финальный кадр · 12</span>
       <h2>Это <span class="out">не</span><br><em>вечеринка.</em><br>Это опыт.</h2>
       <div class="pillars">
         <div class="pillar"><span class="num">01 / form</span><span class="name">Новая форма<br>событий</span></div>
@@ -2272,7 +2563,7 @@ html,body{background:#0a0a0c;font-family:"IBM Plex Sans",sans-serif;color:var(--
       </div>
     </div>
     <div class="bottom">
-      <div class="closer">STAK × BADCLUB × SILICONE —<br><em>опыт, который проживают.</em></div>
+      <div class="closer">STAK × BADCLUB —<br><em>опыт, который проживают.</em></div>
       <div class="cta">
         <span class="lab">контакт · даты · условия</span>
         <span class="v">06<em>.</em>06<em>.</em>26</span>
